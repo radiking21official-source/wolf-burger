@@ -145,11 +145,17 @@
       '<div><div class="drink-row__name">' + it.name + ' ' + (it.tags || []).map(tagBadge).join("") + '</div>' + desc + '</div>' +
       '<div class="drink-row__price">' + price + '</div>');
   }
+  function fillList(sel, catId) {
+    var host = $(sel); if (!host) return;
+    host.innerHTML = "";
+    (MENU.items[catId] || []).forEach(function (it) { host.appendChild(drinkRow(it)); });
+  }
   function renderDrinks() {
     if (!MENU) return;
-    var beer = $("#beerList"), fro = $("#froccsList");
-    if (beer) { beer.innerHTML = ""; (MENU.items.sorok || []).forEach(function (it) { beer.appendChild(drinkRow(it)); }); }
-    if (fro) { fro.innerHTML = ""; (MENU.items.froccsok || []).forEach(function (it) { fro.appendChild(drinkRow(it)); }); }
+    fillList("#beerList", "sorok");
+    fillList("#froccsList", "froccsok");
+    fillList("#softList", "italok");
+    fillList("#coffeeList", "kavek");
   }
 
   /* ---------- Shared UI (nav, cookie, toTop, reveal) ---------- */
