@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sörkert – Wolf Burger | Duna-parti sörkert Szigethalmon</title>
+<meta name="description" content="A Wolf Burger Duna-parti sörkertje Szigethalmon — kézműves csapolt sörök, fröccsök, kerthelyiség, kutya- és gyerekbarát környezet.">
+<meta name="theme-color" content="#0d0d0f">
+<link rel="icon" type="image/png" href="favicon.png">
+<meta property="og:title" content="Wolf Burger Sörkert – Szigethalom">
+<meta property="og:description" content="Kézműves csapolt sörök és fröccsök a Duna partján.">
+<meta property="og:image" content="assets/img/bg-texture.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css?v=3">
+<link rel="stylesheet" href="assets/css/theme.css?v=3">
+<script src="assets/js/theme.js?v=3"></script>
+</head>
+<body data-page="sorkert">
+<div class="nav-scrim" data-close-nav></div>
+
+<header class="header" id="header">
+  <div class="container nav">
+    <a href="index.html" class="nav__logo" aria-label="Wolf Burger"><img src="assets/img/logo.png" alt="Wolf Burger"></a>
+    <nav class="nav__menu" id="navMenu">
+      <a class="nav__link" href="index.html#menu" data-i18n="nav_menu">Étlap</a>
+      <a class="nav__link" href="index.html#delivery" data-i18n="nav_delivery">Rendelés</a>
+      <a class="nav__link" href="index.html#gallery" data-i18n="nav_gallery">Galéria</a>
+      <a class="nav__link" href="index.html#about" data-i18n="nav_about">Rólunk</a>
+      <a class="nav__link nav__link--sk active" href="sorkert.html" data-i18n="nav_sorkert">Sörkert</a>
+      <a class="nav__link" href="index.html#contact" data-i18n="nav_contact">Elérhetőség</a>
+    </nav>
+    <div class="nav__right">
+      <div class="lang" role="group" aria-label="Language">
+        <button data-lang="hu" class="active">HU</button>
+        <button data-lang="en">EN</button>
+      </div>
+      <a href="index.html#delivery" class="btn nav__cta" data-i18n="nav_order">Rendelj most</a>
+      <button class="nav__toggle" id="navToggle" aria-label="Menü" aria-expanded="false"><span></span></button>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="sk-hero">
+  <div class="sk-hero__bg" style="background-image:url('assets/img/bg-texture.jpg')"></div>
+  <div class="container sk-hero__inner">
+    <span class="hero__badge reveal in"><span class="dot"></span><span data-i18n="sk_badge">Duna-parti sörkert</span></span>
+    <h1 class="reveal in"><span data-i18n="sk_title_a">Hűs sörök,</span><em data-i18n="sk_title_b">chill esték a Duna-parton.</em></h1>
+    <p class="sk-hero__sub reveal in d1" data-i18n="sk_sub"></p>
+  </div>
+</section>
+
+<!-- INTRO + FEATURES -->
+<section class="section">
+  <div class="container about__grid">
+    <div class="about__media reveal reveal--scale">
+      <img src="assets/img/food-spread.jpg" alt="Wolf Burger Sörkert">
+      <div class="badge-year"><b>🍺</b><small data-i18n="nav_sorkert">Sörkert</small></div>
+    </div>
+    <div class="about__text">
+      <span class="eyebrow reveal" data-i18n="sk_intro_eyebrow">A mi kis oázisunk</span>
+      <h2 class="section-title reveal d1" data-i18n="sk_intro_title">Ahol a burger után beülsz egy hidegre</h2>
+      <p class="reveal d2" data-i18n="sk_intro_p1"></p>
+      <p class="reveal d2" data-i18n="sk_intro_p2"></p>
+    </div>
+  </div>
+  <div class="container" style="margin-top:clamp(40px,6vw,64px)">
+    <div class="sk-features">
+      <div class="sk-feature reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 3h9l1 3H6z"/><path d="M6 6h10v11a3 3 0 0 1-3 3H9a3 3 0 0 1-3-3z"/><path d="M16 8h2.5a2.5 2.5 0 0 1 0 5H16"/></svg><span data-i18n="sk_f1">Kézműves sörök</span></div>
+      <div class="sk-feature reveal d1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M8 3h8l-1 6-3 3-3-3z"/><path d="M12 12v7"/><path d="M8 21h8"/></svg><span data-i18n="sk_f2">Fröccsök</span></div>
+      <div class="sk-feature reveal d2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 21V9l9-6 9 6v12"/><path d="M3 21h18"/><path d="M9 21v-6h6v6"/></svg><span data-i18n="sk_f3">Kerthelyiség</span></div>
+      <div class="sk-feature reveal d3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="6" cy="10" r="1.6"/><circle cx="18" cy="10" r="1.6"/><circle cx="9.5" cy="6.5" r="1.6"/><circle cx="14.5" cy="6.5" r="1.6"/><path d="M12 12c-2.5 0-4.5 1.8-5 4-.4 1.7 1 3 2.6 2.6 1.6-.4 3.2-.4 4.8 0 1.6.4 3-.9 2.6-2.6-.5-2.2-2.5-4-5-4Z"/></svg><span data-i18n="sk_f4">Kutya- & gyerekbarát</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- BEERS -->
+<section class="section section--tight">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow reveal" data-i18n="sk_beer_title">Csapon nálunk</span>
+      <h2 class="section-title reveal d1" data-i18n="sk_beer_title">Csapon nálunk</h2>
+      <p class="lead reveal d2" data-i18n="sk_beer_sub"></p>
+    </div>
+    <div class="drink-list reveal" id="beerList"></div>
+  </div>
+</section>
+
+<!-- FRÖCCSÖK -->
+<section class="section section--tight" style="padding-top:0">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow reveal" data-i18n="sk_froccs_title">Fröccsök</span>
+      <h2 class="section-title reveal d1" data-i18n="sk_froccs_title">Fröccsök</h2>
+      <p class="lead reveal d2" data-i18n="sk_froccs_sub"></p>
+    </div>
+    <div class="drink-list reveal" id="froccsList"></div>
+    <p class="menu-note reveal" style="margin-top:24px" data-i18n="sk_18"></p>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section">
+  <div class="container">
+    <div class="sk-cta reveal">
+      <span class="eyebrow" style="justify-content:center" data-i18n="nav_sorkert">Sörkert</span>
+      <h2 class="section-title" style="margin:14px 0 14px" data-i18n="sk_cta_title">Gyere, ülj be a falkával!</h2>
+      <p class="lead center" style="margin:0 auto 26px" data-i18n="sk_cta_sub"></p>
+      <a href="index.html#contact" class="btn btn--lg" data-i18n="sk_cta_btn">Elérhetőség</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__bottom" style="border-top:none">
+      <span>© <span id="year"></span> Wolf Burger. <span data-i18n="foot_rights">Minden jog fenntartva.</span></span>
+      <div class="footer__legal">
+        <a href="pages/impresszum.html" data-i18n="foot_imprint">Impresszum</a>
+        <a href="pages/adatvedelem.html" data-i18n="foot_privacy">Adatvédelem</a>
+        <a href="pages/aszf.html" data-i18n="foot_terms">Cookie & ÁSZF</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<button class="to-top" id="toTop" aria-label="Fel"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m6 15 6-6 6 6"/></svg></button>
+
+<button class="theme-fab" id="themeToggle" aria-label="Hangulat" title="Hangulat">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="13.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="12" r="2.5"/><circle cx="13.5" cy="17.5" r="2.5"/><circle cx="7" cy="12" r="2.5"/><path d="M12 2a10 10 0 1 0 0 20c1.4 0 2-1 2-2 0-1.5-1-2-1-3 0-1 .8-1.5 2-1.5h1a4 4 0 0 0 4-4c0-4.5-4-9.5-10-9.5Z"/></svg>
+</button>
+<div class="theme-panel" id="themePanel">
+  <h6 data-i18n="theme_label">Hangulat</h6>
+  <button class="theme-opt active" data-theme-set="1"><span class="theme-swatch sw1"></span><span data-i18n="theme_1">Jeges</span></button>
+  <button class="theme-opt" data-theme-set="2"><span class="theme-swatch sw2"></span><span data-i18n="theme_2">Naplemente</span></button>
+  <button class="theme-opt" data-theme-set="3"><span class="theme-swatch sw3"></span><span data-i18n="theme_3">Tűz & fa</span></button>
+</div>
+
+<script src="assets/js/menu-data.js?v=3"></script>
+<script src="assets/js/i18n.js?v=3"></script>
+<script src="assets/js/site.js?v=3"></script>
+</body>
+</html>

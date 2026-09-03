@@ -1,0 +1,13 @@
+# OS / editor junk
+.DS_Store
+Thumbs.db
+desktop.ini
+*.log
+
+# dependencies / build (nincs build, de biztonságból)
+node_modules/
+.vercel/
+.cache/
+
+# temp
+*.tmp
