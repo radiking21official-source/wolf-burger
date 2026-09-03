@@ -1,5 +1,9 @@
 # Wolf Burger — weboldal (látványterv)
 
+**🌐 Élő oldal:** https://wolf-burger.vercel.app
+**📦 GitHub:** https://github.com/radiking21official-source/wolf-burger
+**🚀 Deploy:** Vercel (a `main` branchre pusholva automatikusan frissül)
+
 Modern, sötét arculatú, kétnyelvű (HU/EN) egyoldalas weboldal a szigethalmi Wolf Burger étteremhez.
 Statikus HTML/CSS/JS — nincs build lépés, bármilyen böngészőben megnyitható.
 
