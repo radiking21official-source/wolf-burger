@@ -80,7 +80,9 @@
   function menuCard(it, catId) {
     var d = I18N[LANG] || {};
     var img = it.img || it.thumb;
-    var badges = (it.tags || []).map(tagBadge).join("");
+    var isHot = (it.tags || []).indexOf("hot") > -1;
+    var badges = (it.tags || []).filter(function (t) { return t !== "hot"; }).map(tagBadge).join("");
+    var nameHtml = it.name + (isHot ? ' <span class="chili" title="' + (LANG === "en" ? "Spicy" : "Csípős") + '">🌶️</span>' : "");
     var media = '<div class="pcard__media">' +
       (img ? '<img src="' + img + '" alt="' + it.name + '" loading="lazy"><div class="pcard__grad"></div>'
            : '<div class="pcard__ph">' + (CAT_EMOJI[catId] || "🍔") + '</div>') +
@@ -89,7 +91,7 @@
         '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m9 18 6-6-6-6"/></svg></span>' +
       '</div>';
     var body = '<div class="pcard__body"><div class="pcard__top">' +
-      '<div class="pcard__name">' + it.name + '</div>' +
+      '<div class="pcard__name">' + nameHtml + '</div>' +
       '<div class="pcard__price">' + cardPrice(it) + '</div></div>' +
       (it[LANG] ? '<div class="pcard__ing">' + it[LANG] + '</div>' : '') +
       (it.kcal ? '<div class="pcard__kcal">~ <b>' + it.kcal + '</b> ' + (d.kcal_label || "kcal") + '</div>' : '') +

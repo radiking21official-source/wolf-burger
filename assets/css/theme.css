@@ -101,7 +101,15 @@
   opacity:0;transform:translateY(-6px);transition:.3s var(--ease)}
 .pcard:hover .pcard__details{opacity:1;transform:none}
 .pcard__details svg{width:13px;height:13px}
-.pcard__body{padding:16px 18px 18px;display:flex;flex-direction:column;flex:1}
+/* header social icons */
+.nav__social{display:flex;align-items:center;gap:4px}
+.nav__social a{width:34px;height:34px;border-radius:9px;display:grid;place-content:center;color:var(--ink-soft);transition:.2s var(--ease)}
+.nav__social a:hover{color:var(--cyan);background:rgba(255,255,255,.06);transform:translateY(-2px)}
+:root[data-theme="2"] .nav__social a:hover,:root[data-theme="3"] .nav__social a:hover{color:var(--warm)}
+.nav__social svg{width:18px;height:18px}
+@media (max-width:1024px){.nav__social{display:none}}
+
+.pcard__body{padding:11px 15px 13px;display:flex;flex-direction:column;flex:1}
 .pcard__top{display:flex;justify-content:space-between;gap:10px;align-items:baseline}
 .pcard__name{font-family:var(--font-cond);font-weight:700;font-size:1.14rem;letter-spacing:.01em;line-height:1.15}
 .pcard__price{white-space:nowrap;text-align:right;flex-shrink:0}
@@ -109,8 +117,9 @@
 .pcard__price small{display:block;font-size:.72rem;color:var(--muted);font-family:var(--font-cond)}
 .pcard__ing{color:var(--muted);font-size:.85rem;line-height:1.4;max-height:0;opacity:0;overflow:hidden;transition:max-height .45s var(--ease),opacity .35s,margin .35s}
 .pcard:hover .pcard__ing{max-height:160px;opacity:1;margin-top:10px}
-.pcard__kcal{margin-top:auto;padding-top:12px;font-family:var(--font-cond);font-size:.76rem;letter-spacing:.06em;color:var(--muted);text-transform:uppercase}
+.pcard__kcal{margin-top:auto;padding-top:6px;font-family:var(--font-cond);font-size:.74rem;letter-spacing:.06em;color:var(--muted);text-transform:uppercase}
 .pcard__kcal b{color:var(--warm)}
+.pcard__name .chili{margin-left:2px;font-size:.95em}
 
 /* ============================================================
    PRODUCT DETAIL PAGE
