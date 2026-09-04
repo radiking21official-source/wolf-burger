@@ -83,8 +83,9 @@
     var isHot = (it.tags || []).indexOf("hot") > -1;
     var badges = (it.tags || []).filter(function (t) { return t !== "hot"; }).map(tagBadge).join("");
     var nameHtml = it.name + (isHot ? ' <span class="chili" title="' + (LANG === "en" ? "Spicy" : "Csípős") + '">🌶️</span>' : "");
+    var posStyle = it.pos ? ' style="object-position:' + it.pos + '"' : "";
     var media = '<div class="pcard__media">' +
-      (img ? '<img src="' + img + '" alt="' + it.name + '" loading="lazy"><div class="pcard__grad"></div>'
+      (img ? '<img src="' + img + '" alt="' + it.name + '" loading="lazy"' + posStyle + '><div class="pcard__grad"></div>'
            : '<div class="pcard__ph">' + (CAT_EMOJI[catId] || "🍔") + '</div>') +
       (badges ? '<div class="pcard__badges">' + badges + '</div>' : '') +
       '<span class="pcard__details">' + (d.details || "Részletek") +
@@ -138,7 +139,7 @@
       var tag = (b.tags && b.tags.indexOf("new") > -1) ? '<span class="fcard__tag">' + (LANG === "en" ? "NEW" : "ÚJ") + '</span>' : "";
       var chili = (b.tags && b.tags.indexOf("hot") > -1) ? ' 🌶️' : "";
       var card = el("a", "fcard reveal" + (i ? " d" + i : ""),
-        '<img src="' + b.img + '" alt="' + b.name + '" loading="lazy">' + tag +
+        '<img src="' + b.img + '" alt="' + b.name + '" loading="lazy"' + (b.pos ? ' style="object-position:' + b.pos + '"' : "") + '>' + tag +
         '<div class="fcard__body"><h3>' + b.name + chili + '</h3><p>' + (b[LANG] || "") + '</p>' +
         '<div class="fcard__price"><b>' + fmt(b.b) + '</b><small>' + menuLbl + ': ' + fmt(b.m) + '</small></div></div>');
       card.href = "termek.html?id=" + slugify(b.name);

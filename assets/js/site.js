@@ -73,7 +73,7 @@
     var d = I18N[LANG] || {};
     var img = it.img || it.thumb;
     var media = '<div class="pcard__media">' +
-      (img ? '<img src="' + img + '" alt="' + it.name + '" loading="lazy"><div class="pcard__grad"></div>' : '<div class="pcard__ph">' + (CAT_EMOJI[catId] || "🍔") + '</div>') +
+      (img ? '<img src="' + img + '" alt="' + it.name + '" loading="lazy"' + (it.pos ? ' style="object-position:' + it.pos + '"' : "") + '><div class="pcard__grad"></div>' : '<div class="pcard__ph">' + (CAT_EMOJI[catId] || "🍔") + '</div>') +
       ((it.tags || []).length ? '<div class="pcard__badges">' + it.tags.map(tagBadge).join("") + '</div>' : '') + '</div>';
     var body = '<div class="pcard__body"><div class="pcard__top"><div class="pcard__name">' + it.name + '</div>' +
       '<div class="pcard__price"><b>' + fmt(it.b) + '</b></div></div></div>';
@@ -93,7 +93,7 @@
     var it = found.it, cat = found.cat, img = it.img || it.thumb;
     document.title = it.name + " – Wolf Burger";
     var media = img
-      ? '<img src="' + img + '" alt="' + it.name + '">'
+      ? '<img src="' + img + '" alt="' + it.name + '"' + (it.pos ? ' style="object-position:' + it.pos + '"' : "") + '>'
       : '<div class="pcard__ph" style="font-size:6rem">' + (CAT_EMOJI[cat.id] || "🍔") + '</div>';
     var price = (it.b === null || it.b === undefined)
       ? '<b style="font-size:1.4rem">' + (d.price_ask || "") + '</b>'
