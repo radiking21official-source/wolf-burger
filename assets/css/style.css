@@ -498,40 +498,53 @@ body.nav-open .nav__toggle span::after{transform:translate(-50%,0) rotate(-45deg
   linear-gradient(180deg,rgba(13,13,15,.72),rgba(13,13,15,.86)),
   radial-gradient(120% 80% at 50% 0%,rgba(18,186,231,.10),transparent 60%)}
 
-/* Elrendezés — MOBIL-FIRST: kártya felül, szöveg alatta */
-.hero__inner--split{max-width:1140px;width:100%;display:grid;
-  grid-template-columns:1fr;gap:clamp(16px,4.5vw,34px);align-items:center}
-.hero__copy{min-width:0}
-.hero__showcase{order:-1;display:flex;justify-content:center}
+/* Elrendezés — MOBIL-FIRST: szöveg FENT, NAGY videó LENT (élig) */
+.hero-track .hero{align-items:stretch}
+.hero__inner--split{max-width:1140px;width:100%;
+  display:flex;flex-direction:column;justify-content:space-between;gap:18px}
+.hero__copy{min-width:0;padding-inline:var(--gutter);flex:0 0 auto}
+.hero__showcase{flex:1 1 auto;min-height:0;display:flex;justify-content:center;align-items:stretch}
 
-/* A videó-kártya */
-.hero__card{position:relative;aspect-ratio:900/1304;
-  height:clamp(196px,30svh,300px);width:auto;max-width:82vw;
-  border-radius:20px;overflow:hidden;background:#0d0d0f;
-  border:1px solid rgba(18,186,231,.35);
-  box-shadow:0 26px 70px -22px rgba(0,0,0,.85),0 0 0 1px rgba(0,0,0,.5),
-             inset 0 0 0 1px rgba(255,255,255,.04)}
-.hero__video{width:100%;height:100%;object-fit:cover;display:block}
-.hero__card-hint{position:absolute;left:0;right:0;bottom:11px;text-align:center;
+/* Mobil hero: tiszta szöveg-zóna (nincs alcím / kiszállítás, csak 1 gomb) */
+.hero-track .hero__inner{padding-top:84px;padding-bottom:0;padding-inline:0}
+.hero-track .hero__sub,
+.hero-track .hero .hero__delivery{display:none}
+.hero__inner--split h1{font-size:clamp(2.2rem,9vw,3.3rem)}
+.hero__badge{margin-bottom:14px}
+.hero__inner--split .hero__cta{margin-top:20px}
+.hero__inner--split .hero__cta .btn--ghost{display:none}
+.hero__inner--split .hero__cta .btn{width:100%}
+
+/* A videó-kártya — mobilon NAGY, teljes szélesség, a hero aljához igazítva */
+.hero__card{position:relative;width:100%;max-width:none;
+  height:100%;min-height:300px;
+  border-radius:22px 22px 0 0;overflow:hidden;background:#0d0d0f;
+  border:1px solid rgba(18,186,231,.35);border-bottom:none;
+  box-shadow:0 -8px 44px -18px rgba(0,0,0,.85),inset 0 0 0 1px rgba(255,255,255,.04)}
+.hero__video{width:100%;height:100%;object-fit:cover;object-position:center 42%;display:block}
+.hero__card-hint{position:absolute;left:0;right:0;bottom:16px;text-align:center;
   font-family:var(--font-cond);font-weight:600;text-transform:uppercase;
-  letter-spacing:.13em;font-size:.7rem;color:#fff;pointer-events:none;
+  letter-spacing:.13em;font-size:.72rem;color:#fff;pointer-events:none;
   text-shadow:0 2px 12px rgba(0,0,0,.95);transition:opacity .45s ease}
-
-/* Kompakt hero, hogy 100svh-ban elférjen a pin alatt */
-.hero-track .hero__inner{padding-top:96px;padding-bottom:34px}
-@media (max-width:640px){
-  .hero-track .hero .hero__delivery{display:none} /* redundáns a #delivery szekcióval */
-  .hero-track .hero__sub{margin:16px 0 20px;font-size:1rem}
-}
 
 /* DESKTOP: kétoszlopos — szöveg balra, kártya jobbra */
 @media (min-width:900px){
   .hero-track{--scrub:88vh}
-  .hero__inner--split{grid-template-columns:1.02fr .98fr;gap:52px;text-align:left}
+  .hero-track .hero{align-items:center}
+  .hero__inner--split{display:grid;grid-template-columns:1.02fr .98fr;gap:52px;
+    text-align:left;align-items:center}
+  .hero__copy{padding-inline:0}
   .hero__inner--split h1{font-size:clamp(2.6rem,4.7vw,5.3rem)}
-  .hero__showcase{order:0;justify-content:flex-end}
-  .hero__card{height:min(64vh,540px);max-width:none}
-  .hero-track .hero__inner{padding-top:120px}
+  .hero__showcase{justify-content:flex-end;align-items:center}
+  .hero__card{width:auto;height:min(64vh,540px);aspect-ratio:900/1304;
+    border-radius:20px;border-bottom:1px solid rgba(18,186,231,.35);
+    box-shadow:0 26px 70px -22px rgba(0,0,0,.85),0 0 0 1px rgba(0,0,0,.5),inset 0 0 0 1px rgba(255,255,255,.04)}
+  .hero__video{object-position:center}
+  .hero-track .hero__inner{padding-top:120px;padding-bottom:34px;padding-inline:var(--gutter)}
+  .hero-track .hero__sub{display:block}
+  .hero-track .hero .hero__delivery{display:flex}
+  .hero__inner--split .hero__cta .btn--ghost{display:inline-flex}
+  .hero__inner--split .hero__cta .btn{width:auto}
 }
 
 /* ===== Termékoldal: részletes tápérték-táblázat + allergének ===== */
