@@ -19,9 +19,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css?v=6">
-<link rel="stylesheet" href="assets/css/theme.css?v=6">
-<script src="assets/js/theme.js?v=6"></script>
+<link rel="stylesheet" href="assets/css/style.css?v=9">
+<link rel="stylesheet" href="assets/css/theme.css?v=9">
+<script src="assets/js/theme.js?v=9"></script>
 
 <script type="application/ld+json">
 {
@@ -54,11 +54,11 @@
     <nav class="nav__menu" id="navMenu">
       <a class="nav__link" href="#menu" data-i18n="nav_menu">Étlap</a>
       <a class="nav__link" href="#delivery" data-i18n="nav_delivery">Rendelés</a>
-      <a class="nav__link" href="#gallery" data-i18n="nav_gallery">Galéria</a>
-      <a class="nav__link" href="#about" data-i18n="nav_about">Rólunk</a>
+      <a class="nav__link" href="galeria.html" data-i18n="nav_gallery">Galéria</a>
+      <a class="nav__link" href="rolunk.html" data-i18n="nav_about">Rólunk</a>
       <a class="nav__link nav__link--sk" href="sorkert.html" data-i18n="nav_sorkert">Sörkert</a>
-      <a class="nav__link" href="#vouchers" data-i18n="nav_vouchers">Utalvány</a>
-      <a class="nav__link" href="#contact" data-i18n="nav_contact">Elérhetőség</a>
+      <a class="nav__link" href="utalvany.html" data-i18n="nav_vouchers">Utalvány</a>
+      <a class="nav__link" href="kapcsolat.html" data-i18n="nav_contact">Elérhetőség</a>
     </nav>
     <div class="nav__right">
       <a href="#delivery" class="btn nav__cta" data-i18n="nav_order">Rendelj most</a>
@@ -72,24 +72,36 @@
 </header>
 
 <!-- ============ HERO ============ -->
+<div class="hero-track" id="heroTrack">
 <section class="hero" id="home">
   <div class="hero__bg" id="heroBg" style="background-image:url('assets/img/fonok-burger.jpg')"></div>
   <div class="hero__grain"></div>
-  <div class="container hero__inner">
-    <span class="hero__badge reveal in"><span class="dot"></span><span data-i18n="hero_badge">Szigethalom · Duna-parti sörkert</span></span>
-    <h1 class="reveal in">
-      <span data-i18n="hero_title_a">Szaftos burgerek,</span>
-      <em data-i18n="hero_title_b">igazi farkasétvágyra.</em>
-    </h1>
-    <p class="hero__sub reveal in d1" data-i18n="hero_sub">100% marhahús, friss zöldségek és házi szószok — frissen sütve a Duna partján. Egyél nálunk a sörkertben, vagy rendeld házhoz pár kattintással.</p>
-    <div class="hero__cta reveal in d2">
-      <a href="#menu" class="btn btn--lg" data-i18n="hero_cta_menu">Étlap megtekintése</a>
-      <a href="#delivery" class="btn btn--ghost btn--lg" data-i18n="hero_cta_order">Rendelj online</a>
+  <div class="container hero__inner hero__inner--split">
+    <div class="hero__copy">
+      <span class="hero__badge reveal in"><span class="dot"></span><span data-i18n="hero_badge">Szigethalom · Duna-parti sörkert</span></span>
+      <h1 class="reveal in">
+        <span data-i18n="hero_title_a">Szaftos burgerek,</span>
+        <em data-i18n="hero_title_b">igazi farkasétvágyra.</em>
+      </h1>
+      <p class="hero__sub reveal in d1" data-i18n="hero_sub">100% marhahús, friss zöldségek és házi szószok — frissen sütve a Duna partján. Egyél nálunk a sörkertben, vagy rendeld házhoz pár kattintással.</p>
+      <div class="hero__cta reveal in d2">
+        <a href="#menu" class="btn btn--lg" data-i18n="hero_cta_menu">Étlap megtekintése</a>
+        <a href="#delivery" class="btn btn--ghost btn--lg" data-i18n="hero_cta_order">Rendelj online</a>
+      </div>
+      <div class="hero__delivery reveal in d3">
+        <span data-i18n="hero_delivery_label">Házhozszállítás:</span>
+        <a class="chip" href="https://wolt.com/hu/hun/szigetszentmiklos/restaurant/wolf-burger-szigetszentmiklos" target="_blank" rel="noopener"><b>Wolt</b></a>
+        <a class="chip" href="https://www.foodora.hu/restaurant/xna1/wolf-burger" target="_blank" rel="noopener"><b>foodora</b></a>
+      </div>
     </div>
-    <div class="hero__delivery reveal in d3">
-      <span data-i18n="hero_delivery_label">Házhozszállítás:</span>
-      <a class="chip" href="https://wolt.com/hu/hun/szigetszentmiklos/restaurant/wolf-burger-szigetszentmiklos" target="_blank" rel="noopener"><b>Wolt</b></a>
-      <a class="chip" href="https://www.foodora.hu/restaurant/xna1/wolf-burger" target="_blank" rel="noopener"><b>foodora</b></a>
+    <div class="hero__showcase reveal in d1">
+      <div class="hero__card">
+        <video class="hero__video" id="heroVideo" muted playsinline preload="auto" disablepictureinpicture
+               poster="assets/img/hero-anim/burger-poster.jpg" aria-label="Wolf Burger — a hozzávalókból összeáll a burger">
+          <source src="assets/img/hero-anim/burger-assemble.mp4" type="video/mp4">
+        </video>
+        <span class="hero__card-hint" id="heroHint" aria-hidden="true"><span data-i18n="scroll_down">Görgess</span> — összeáll 🍔</span>
+      </div>
     </div>
   </div>
   <a href="#about" class="hero__scroll" aria-label="Scroll">
@@ -97,6 +109,7 @@
     <span class="mouse"></span>
   </a>
 </section>
+</div>
 
 <!-- ============ MARQUEE ============ -->
 <div class="marquee" aria-hidden="true">
@@ -357,9 +370,9 @@
         <ul>
           <li><a href="#menu" data-i18n="nav_menu">Étlap</a></li>
           <li><a href="#delivery" data-i18n="nav_delivery">Rendelés</a></li>
-          <li><a href="#gallery" data-i18n="nav_gallery">Galéria</a></li>
-          <li><a href="#about" data-i18n="nav_about">Rólunk</a></li>
-          <li><a href="#vouchers" data-i18n="nav_vouchers">Utalvány</a></li>
+          <li><a href="galeria.html" data-i18n="nav_gallery">Galéria</a></li>
+          <li><a href="rolunk.html" data-i18n="nav_about">Rólunk</a></li>
+          <li><a href="utalvany.html" data-i18n="nav_vouchers">Utalvány</a></li>
         </ul>
       </div>
       <div>
@@ -425,8 +438,9 @@
   <button class="theme-opt" data-theme-set="3"><span class="theme-swatch sw3"></span><span data-i18n="theme_3">Tűz &amp; fa</span></button>
 </div>
 
-<script src="assets/js/menu-data.js?v=6"></script>
-<script src="assets/js/i18n.js?v=6"></script>
-<script src="assets/js/main.js?v=6"></script>
+<script src="assets/js/menu-data.js?v=9"></script>
+<script src="assets/js/i18n.js?v=9"></script>
+<script src="assets/js/main.js?v=9"></script>
+<script src="assets/js/hero-scrub.js?v=9"></script>
 </body>
 </html>

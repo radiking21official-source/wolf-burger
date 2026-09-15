@@ -11,3 +11,8 @@ node_modules/
 
 # temp
 *.tmp
+
+# Hero animáció forrás/master (élesbe csak a végleges mp4 + poszter kell)
+assets/img/hero-anim/burger-open.png
+assets/img/hero-anim/burger-closed.jpg
+assets/img/hero-anim/test-kling-pro.mp4

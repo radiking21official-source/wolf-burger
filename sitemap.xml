@@ -2,6 +2,10 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://wolf-burger.vercel.app/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
   <url><loc>https://wolf-burger.vercel.app/sorkert.html</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://wolf-burger.vercel.app/galeria.html</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://wolf-burger.vercel.app/rolunk.html</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://wolf-burger.vercel.app/utalvany.html</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://wolf-burger.vercel.app/kapcsolat.html</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://wolf-burger.vercel.app/pages/impresszum.html</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://wolf-burger.vercel.app/pages/adatvedelem.html</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://wolf-burger.vercel.app/pages/aszf.html</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>

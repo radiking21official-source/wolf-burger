@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="hu" data-default-theme="3">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Galéria – Wolf Burger | Ízek, amiket látni is öröm</title>
+<meta name="description" content="Wolf Burger galéria — szaftos burgerek, ropogós köretek és falatkák a szigethalmi Wolf Burgerből, friss ételfotókkal.">
+<meta name="theme-color" content="#0d0d0f">
+<link rel="icon" type="image/png" href="favicon.png">
+<meta property="og:title" content="Wolf Burger – Galéria">
+<meta property="og:description" content="Ízek, amiket látni is öröm — a Wolf Burger ételfotói.">
+<meta property="og:image" content="assets/img/menu/wolf-cover.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css?v=9">
+<link rel="stylesheet" href="assets/css/theme.css?v=9">
+<script src="assets/js/theme.js?v=9"></script>
+</head>
+<body data-page="galeria">
+<div class="nav-scrim" data-close-nav></div>
+
+<header class="header" id="header">
+  <div class="container nav">
+    <a href="index.html" class="nav__logo" aria-label="Wolf Burger"><img src="assets/img/logo.png" alt="Wolf Burger"></a>
+    <nav class="nav__menu" id="navMenu">
+      <a class="nav__link" href="index.html#menu" data-i18n="nav_menu">Étlap</a>
+      <a class="nav__link" href="index.html#delivery" data-i18n="nav_delivery">Rendelés</a>
+      <a class="nav__link active" href="galeria.html" data-i18n="nav_gallery">Galéria</a>
+      <a class="nav__link" href="rolunk.html" data-i18n="nav_about">Rólunk</a>
+      <a class="nav__link nav__link--sk" href="sorkert.html" data-i18n="nav_sorkert">Sörkert</a>
+      <a class="nav__link" href="utalvany.html" data-i18n="nav_vouchers">Utalvány</a>
+      <a class="nav__link" href="kapcsolat.html" data-i18n="nav_contact">Elérhetőség</a>
+    </nav>
+    <div class="nav__right">
+      <a href="index.html#delivery" class="btn nav__cta" data-i18n="nav_order">Rendelj most</a>
+      <div class="lang" role="group" aria-label="Language">
+        <button data-lang="hu" class="active">HU</button>
+        <button data-lang="en">EN</button>
+      </div>
+      <button class="nav__toggle" id="navToggle" aria-label="Menü" aria-expanded="false"><span></span></button>
+    </div>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="container">
+    <span class="eyebrow reveal in" data-i18n="gal_eyebrow">Galéria</span>
+    <h1 class="reveal in" data-i18n="gal_title">Ízek, amiket látni is öröm</h1>
+    <p class="lead center reveal in d1" data-i18n="gal_sub">Kattints bármelyik képre a nagyításhoz.</p>
+  </div>
+</section>
+
+<section class="section subpage-first">
+  <div class="container">
+    <div class="gallery reveal" id="galleryGrid"></div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__bottom" style="border-top:none">
+      <span>© <span id="year"></span> Wolf Burger. <span data-i18n="foot_rights">Minden jog fenntartva.</span></span>
+      <div class="footer__legal">
+        <a href="pages/impresszum.html" data-i18n="foot_imprint">Impresszum</a>
+        <a href="pages/adatvedelem.html" data-i18n="foot_privacy">Adatvédelem</a>
+        <a href="pages/aszf.html" data-i18n="foot_terms">Cookie & ÁSZF</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <button class="lightbox__close" id="lbClose" aria-label="Bezárás"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
+  <button class="lightbox__nav prev" id="lbPrev" aria-label="Előző"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m15 18-6-6 6-6"/></svg></button>
+  <img id="lbImg" src="" alt="">
+  <button class="lightbox__nav next" id="lbNext" aria-label="Következő"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m9 18 6-6-6-6"/></svg></button>
+</div>
+
+<button class="to-top" id="toTop" aria-label="Fel"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m6 15 6-6 6 6"/></svg></button>
+
+<button class="theme-fab" id="themeToggle" aria-label="Hangulat" title="Hangulat">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="13.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="12" r="2.5"/><circle cx="13.5" cy="17.5" r="2.5"/><circle cx="7" cy="12" r="2.5"/><path d="M12 2a10 10 0 1 0 0 20c1.4 0 2-1 2-2 0-1.5-1-2-1-3 0-1 .8-1.5 2-1.5h1a4 4 0 0 0 4-4c0-4.5-4-9.5-10-9.5Z"/></svg>
+</button>
+<div class="theme-panel" id="themePanel">
+  <h6 data-i18n="theme_label">Hangulat</h6>
+  <button class="theme-opt" data-theme-set="1"><span class="theme-swatch sw1"></span><span data-i18n="theme_1">Jeges</span></button>
+  <button class="theme-opt" data-theme-set="2"><span class="theme-swatch sw2"></span><span data-i18n="theme_2">Naplemente</span></button>
+  <button class="theme-opt active" data-theme-set="3"><span class="theme-swatch sw3"></span><span data-i18n="theme_3">Tűz & fa</span></button>
+</div>
+
+<script src="assets/js/menu-data.js?v=9"></script>
+<script src="assets/js/i18n.js?v=9"></script>
+<script src="assets/js/site.js?v=9"></script>
+<script>
+/* Galéria: ételfotó-rács + lightbox (önálló, csak ezen az oldalon) */
+(function () {
+  var GAL = [
+    { src: "assets/img/menu/wolf-cover.jpg", cls: "wide", alt: "Wolf Burger" },
+    { src: "assets/img/menu/wolf-burger.jpg", cls: "tall", alt: "Wolf burger" },
+    { src: "assets/img/menu/fonok-kedvence-burger.jpg", cls: "", alt: "Főnök kedvence burger" },
+    { src: "assets/img/menu/smash-burger.jpg", cls: "", alt: "Smash burger" },
+    { src: "assets/img/menu/bbq-burger.jpg", cls: "", alt: "BBQ burger" },
+    { src: "assets/img/menu/cheddar-burgonyatal.jpg", cls: "wide", alt: "Cheddar sajtszószos burgonyatál" },
+    { src: "assets/img/menu/classic-burger.jpg", cls: "", alt: "Classic burger" },
+    { src: "assets/img/menu/csirkes-burger.jpg", cls: "", alt: "Csirkés burger" },
+    { src: "assets/img/menu/camembert-burger.jpg", cls: "", alt: "Camembert-es vega burger" },
+    { src: "assets/img/menu/sajt-burger.jpg", cls: "", alt: "Sajtburger" },
+    { src: "assets/img/menu/wolf-closeup.jpg", cls: "tall", alt: "Wolf Burger közelről" },
+    { src: "assets/img/menu/churros.jpg", cls: "", alt: "Churros" },
+    { src: "assets/img/menu/nuggets-burger.jpg", cls: "", alt: "Csirke nuggets burger" },
+    { src: "assets/img/menu/hagymakarika.jpg", cls: "", alt: "Hagymakarikák" },
+    { src: "assets/img/menu/v-burgonya.jpg", cls: "", alt: "„V” alakú héjas burgonyacikk" },
+    { src: "assets/img/menu/mini-burger.jpg", cls: "", alt: "Mini burger" }
+  ];
+  var grid = document.getElementById("galleryGrid");
+  if (!grid) return;
+  GAL.forEach(function (g, i) {
+    var a = document.createElement("a");
+    a.className = "gitem" + (g.cls ? " " + g.cls : "");
+    a.href = g.src; a.setAttribute("data-i", i);
+    a.innerHTML = '<img src="' + g.src + '" alt="' + g.alt + '" loading="lazy">' +
+      '<span class="gitem__zoom"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3M11 8v6M8 11h6"/></svg></span>';
+    grid.appendChild(a);
+  });
+
+  var lb = document.getElementById("lightbox"), img = document.getElementById("lbImg");
+  var cur = 0;
+  function open(i) { cur = (i + GAL.length) % GAL.length; img.src = GAL[cur].src; img.alt = GAL[cur].alt; lb.classList.add("open"); lb.setAttribute("aria-hidden", "false"); }
+  function close() { lb.classList.remove("open"); lb.setAttribute("aria-hidden", "true"); }
+  grid.addEventListener("click", function (e) {
+    var a = e.target.closest(".gitem"); if (!a) return;
+    e.preventDefault(); open(parseInt(a.getAttribute("data-i"), 10));
+  });
+  document.getElementById("lbClose").addEventListener("click", close);
+  document.getElementById("lbPrev").addEventListener("click", function () { open(cur - 1); });
+  document.getElementById("lbNext").addEventListener("click", function () { open(cur + 1); });
+  lb.addEventListener("click", function (e) { if (e.target === lb) close(); });
+  document.addEventListener("keydown", function (e) {
+    if (!lb.classList.contains("open")) return;
+    if (e.key === "Escape") close();
+    else if (e.key === "ArrowLeft") open(cur - 1);
+    else if (e.key === "ArrowRight") open(cur + 1);
+  });
+})();
+</script>
+</body>
+</html>

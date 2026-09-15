@@ -67,7 +67,33 @@
       cells += '<div class="nutri-cell"><b>' + it.macros[1] + ' g</b><span>' + (d.fat || "Zsír") + '</span></div>';
       cells += '<div class="nutri-cell"><b>' + it.macros[2] + ' g</b><span>' + (d.carbs || "Szénhidrát") + '</span></div>';
     }
-    return '<h3>' + (d.prod_nutrition || "Tápérték") + '</h3><div class="nutri-grid">' + cells + '</div>';
+    var grid = '<div class="nutri-grid">' + cells + '</div>';
+    var table = "";
+    if (it.nutri && it.nutri.length >= 7) {
+      var n = it.nutri;
+      var g = function (v) { return String(v).replace(".", ",") + " g"; };
+      var rows = [
+        [(d.n_fat || "Zsír"), g(n[0]), false],
+        [(d.n_sat || "ebből telített zsírsavak"), g(n[1]), true],
+        [(d.n_carb || "Szénhidrát"), g(n[2]), false],
+        [(d.n_sugar || "ebből cukrok"), g(n[3]), true],
+        [(d.n_fiber || "Rost"), g(n[4]), false],
+        [(d.n_protein || "Fehérje"), g(n[5]), false],
+        [(d.n_salt || "Só"), g(n[6]), false]
+      ];
+      table = '<table class="nutri-table"><tbody>' + rows.map(function (r) {
+        return '<tr' + (r[2] ? ' class="sub"' : '') + '><td>' + r[0] + '</td><td>' + r[1] + '</td></tr>';
+      }).join("") + '</tbody></table>';
+    }
+    var allergTxt = it.allergens || "";
+    if (allergTxt && LANG === "en") {
+      var AL = { "GLUTÉN": "Gluten", "LAKTÓZ": "Lactose", "TOJÁS": "Egg", "SZEZÁMMAG": "Sesame", "MUSTÁRMAG": "Mustard seed", "MUSTÁR": "Mustard", "ZELLER": "Celery", "SZÓJA": "Soy", "TEJ": "Milk", "KÁLIUM-METABISZULFIT": "Potassium metabisulphite" };
+      allergTxt = allergTxt.split(",").map(function (a) { var k = a.trim(); return AL[k] || k; }).join(", ");
+    }
+    var allerg = allergTxt
+      ? '<div class="allergens"><span class="allergens__label">' + (d.allergens_label || "Allergének") + ':</span> ' + allergTxt + '</div>'
+      : "";
+    return '<h3>' + (d.prod_nutrition || "Tápérték") + '</h3>' + grid + table + allerg;
   }
   function relatedCard(it, catId) {
     var d = I18N[LANG] || {};
@@ -195,6 +221,17 @@
       var io = new IntersectionObserver(function (en) { en.forEach(function (x) { if (x.isIntersecting) { x.target.classList.add("in"); io.unobserve(x.target); } }); }, { threshold: .12, rootMargin: "0px 0px -6% 0px" });
       $$(".reveal").forEach(function (r) { io.observe(r); });
     } else { $$(".reveal").forEach(function (r) { r.classList.add("in"); }); }
+
+    // Kapcsolati űrlap (látványterv — nincs backend, csak visszajelzés)
+    var form = $("#contactForm");
+    if (form) {
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        if (!form.checkValidity()) { form.reportValidity(); return; }
+        var msg = $("#formMsg"); if (msg) msg.classList.add("show");
+        form.reset();
+      });
+    }
 
     var yr = $("#year"); if (yr) yr.textContent = new Date().getFullYear();
     onScroll();
