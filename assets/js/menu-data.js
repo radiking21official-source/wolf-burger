@@ -52,7 +52,13 @@ window.WB_MENU = {
         en:"Fries, smash sauce, pickles, tomato, red onion, 2 crispy smashed beef patties (2×90 g), roasted onion, 4 slices cheddar, 2 slices bacon, chives." },
       { name:"Cheddar sajtszószos burgonyatál", b:4590, tags:["hot"], img:"assets/img/menu/cheddar-burgonyatal.jpg", thumb:"assets/img/menu/cheddar-burgonyatal.jpg", kcal:1615, macros:[26,109,100], nutri:[108.5,28.3,100.4,4.8,0.6,26.0,7.0], allergens:"GLUTÉN, LAKTÓZ, TOJÁS, MUSTÁR",
         hu:"„V” alakú fűszeres héjas burgonyacikk, házi cheddar sajtszósz, wolf majonéz, pirított szárított hagyma, bacon chips, jalapeño, snidling.",
-        en:"„V”-cut spiced potato wedges, house cheddar sauce, wolf mayo, crispy onion, bacon chips, jalapeño, chives." }
+        en:"„V”-cut spiced potato wedges, house cheddar sauce, wolf mayo, crispy onion, bacon chips, jalapeño, chives." },
+      { name:"Vargányás burger", b:null, kcal:975, macros:[42,57,75], nutri:[56.6,26.9,74.6,20.1,1.2,41.7,2.2], allergens:"GLUTÉN, LAKTÓZ, TOJÁS, SZEZÁMMAG",
+        hu:"Buci, vörösáfonya lekvár, saláta, marhahús pogácsa (18 dkg), edami sajt, bacon, barnamártásos vargánya ragu. Áráért érdeklődj a pultnál.",
+        en:"Bun, cranberry jam, lettuce, beef patty (180 g), edam cheese, bacon, porcini ragout in brown sauce. Ask at the counter for the price." },
+      { name:"Tépett sertéshúsos tál", b:null, img:"assets/img/menu/tepett-tal.jpg", thumb:"assets/img/menu/tepett-tal.jpg", kcal:2101, macros:[67,94,138], nutri:[93.8,30.4,137.6,27.9,10.5,67.1,12.2], allergens:"GLUTÉN, LAKTÓZ, TOJÁS, MUSTÁR, KÁLIUM-METABISZULFIT, ZELLER",
+        hu:"Zöldfűszeres hullámos burgonya, BBQ-s tépett sertéshús, cheddar sajtszósz, amerikai káposztasaláta, BBQ szósz, újhagyma. Áráért érdeklődj a pultnál.",
+        en:"Herbed crinkle-cut potatoes, BBQ pulled pork, cheddar cheese sauce, coleslaw, BBQ sauce, spring onion. Ask at the counter for the price." }
     ],
 
     koretek: [
