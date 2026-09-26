@@ -11,18 +11,32 @@
   var hint  = document.getElementById('heroHint');
   if (!track || !video) return;
 
-  // file:// megnyitáskor a böngészők gyakran tiltják a pontos seek-elést,
-  // ezért ott nem scrubolunk, hanem egyszerűen lejátsszuk a klipet loopban,
-  // hogy közvetlenül megnyitva is működjön az animáció.
-  if (location.protocol === 'file:') {
+  // Sima, loopolt lejátszás (nincs képkockánkénti seek).
+  function playLoop() {
     try {
       video.loop = true; video.muted = true; video.setAttribute('playsinline', '');
+      if (hint) hint.style.display = 'none';
       var kick = function () { var p = video.play(); if (p && p.catch) p.catch(function () {}); };
       if (video.readyState >= 2) kick();
       else video.addEventListener('loadeddata', kick, { once: true });
       window.addEventListener('touchstart', kick, { passive: true, once: true });
       window.addEventListener('pointerdown', kick, { passive: true, once: true });
     } catch (e) {}
+  }
+
+  // "Lite" mód:
+  //  - file:// megnyitáskor a böngészők gyakran tiltják a pontos seek-elést;
+  //  - mobil / érintős eszközön a képkockánkénti currentTime-seek AKADOZIK.
+  // Ilyenkor nem scrubolunk: a pin-szakaszt kilapítjuk és a klipet simán,
+  // loopban játsszuk le — így telefonon is folyamatos az animáció.
+  var mq = window.matchMedia;
+  var liteMode = (location.protocol === 'file:') ||
+    (mq && (mq('(max-width: 899px)').matches ||
+            mq('(hover: none) and (pointer: coarse)').matches));
+
+  if (liteMode) {
+    track.classList.add('hero-track--static');
+    playLoop();
     return;
   }
 

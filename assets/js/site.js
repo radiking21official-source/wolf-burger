@@ -39,7 +39,7 @@
   function setLang(l) {
     LANG = l; localStorage.setItem("wb_lang", l); applyI18n();
     if ($("#productDetail")) renderProduct();
-    if ($("#beerList")) renderDrinks();
+    if ($("#sorlapRoot")) renderDrinks();
   }
 
   /* ---------- Product detail ---------- */
@@ -160,28 +160,43 @@
     }
   }
 
-  /* ---------- Sörkert drinks ---------- */
+  /* ---------- Itallap (sorlap.html) ---------- */
   function drinkRow(it) {
-    var d = I18N[LANG] || {};
-    var price = (it.b === null || it.b === undefined)
-      ? '<b style="font-size:.9rem">' + (d.price_ask || "") + '</b>'
-      : '<b>' + (it.unit ? it.unit + " · " : "") + fmt(it.b) + '</b>' + (it.b2 ? '<small>' + it.unit2 + " · " + fmt(it.b2) + '</small>' : '');
+    var dot = it.brand ? '<span class="drink-dot" style="--bc:' + (it.bc || "#8b949b") + '" title="' + it.brand + '"></span>' : "";
+    var tags = (it.tags || []).map(tagBadge).join("");
     var desc = it[LANG] ? '<div class="drink-row__desc">' + it[LANG] + '</div>' : '';
+    var sizes = it.sizes || [];
+    var price;
+    if (sizes.length === 1 && !sizes[0][0]) {
+      price = '<b>' + fmt(sizes[0][1]) + '</b>';
+    } else if (sizes.length === 1) {
+      price = '<b>' + fmt(sizes[0][1]) + '</b><small>' + sizes[0][0] + '</small>';
+    } else {
+      price = sizes.map(function (s, i) {
+        return i === 0 ? '<b>' + s[0] + ' · ' + fmt(s[1]) + '</b>'
+                       : '<small>' + s[0] + ' · ' + fmt(s[1]) + '</small>';
+      }).join("");
+    }
     return el("div", "drink-row",
-      '<div><div class="drink-row__name">' + it.name + ' ' + (it.tags || []).map(tagBadge).join("") + '</div>' + desc + '</div>' +
+      '<div class="drink-row__main"><div class="drink-row__name">' + dot + it.name +
+        (tags ? ' ' + tags : "") + '</div>' + desc + '</div>' +
       '<div class="drink-row__price">' + price + '</div>');
   }
-  function fillList(sel, catId) {
-    var host = $(sel); if (!host) return;
-    host.innerHTML = "";
-    (MENU.items[catId] || []).forEach(function (it) { host.appendChild(drinkRow(it)); });
-  }
   function renderDrinks() {
-    if (!MENU) return;
-    fillList("#beerList", "sorok");
-    fillList("#froccsList", "froccsok");
-    fillList("#softList", "italok");
-    fillList("#coffeeList", "kavek");
+    var root = $("#sorlapRoot");
+    if (!root || !MENU || !MENU.drinks) return;
+    root.innerHTML = "";
+    MENU.drinks.cats.forEach(function (cat) {
+      var items = MENU.drinks.items[cat.id] || [];
+      if (!items.length) return;
+      var noteObj = (MENU.drinks.notes || {})[cat.id];
+      var note = noteObj ? '<p class="sorlap-cat__note">' + (noteObj[LANG] || noteObj.hu || "") + '</p>' : "";
+      var sec = el("section", "sorlap-cat reveal",
+        '<h2 class="sorlap-cat__title">' + cat[LANG] + '</h2>' + note + '<div class="drink-list"></div>');
+      var list = sec.querySelector(".drink-list");
+      items.forEach(function (it) { list.appendChild(drinkRow(it)); });
+      root.appendChild(sec);
+    });
   }
 
   /* ---------- Shared UI (nav, cookie, toTop, reveal) ---------- */

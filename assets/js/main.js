@@ -49,7 +49,7 @@
   }
   function setLang(l) {
     LANG = l; localStorage.setItem("wb_lang", l);
-    applyI18n(); renderMenu(); renderFeatured(); buildMarquee();
+    applyI18n(); renderMenu(); renderFeatured();
   }
   $$(".lang button").forEach(function (b) {
     b.addEventListener("click", function () { setLang(b.getAttribute("data-lang")); });
@@ -150,15 +150,18 @@
 
   /* ---------- Gallery ---------- */
   var GALLERY = [
-    { src: "assets/img/food-spread.jpg", cls: "wide" },
-    { src: "assets/img/fourcheese-burger.jpg", cls: "tall" },
-    { src: "assets/img/onion-rings.jpg", cls: "tall" },
-    { src: "assets/img/bacon-burger.jpg", cls: "" },
-    { src: "assets/img/fonok-burger.jpg", cls: "" },
-    { src: "assets/img/chicken-burger.jpg", cls: "" },
-    { src: "assets/img/fries.jpg", cls: "wide" },
-    { src: "assets/img/camembert-burger.jpg", cls: "" },
-    { src: "assets/img/hero-portrait.jpg", cls: "" }
+    { src: "assets/img/gallery/sorkert-wide.jpg", cls: "wide" },
+    { src: "assets/img/gallery/wolf-burger-kez.jpg", cls: "tall" },
+    { src: "assets/img/gallery/rendelo-kunyho.jpg", cls: "tall" },
+    { src: "assets/img/gallery/terasz-rozsak.jpg", cls: "" },
+    { src: "assets/img/gallery/teke-jatek.jpg", cls: "" },
+    { src: "assets/img/gallery/fuzerfeny-este.jpg", cls: "wide" },
+    { src: "assets/img/gallery/tal-valogatas.jpg", cls: "" },
+    { src: "assets/img/gallery/nagy-kivetito.jpg", cls: "" },
+    { src: "assets/img/gallery/sorkert-nappal.jpg", cls: "wide" },
+    { src: "assets/img/gallery/hordo-levendula.jpg", cls: "tall" },
+    { src: "assets/img/gallery/sorfozde-pult.jpg", cls: "" },
+    { src: "assets/img/gallery/sorkert-este.jpg", cls: "" }
   ];
   function renderGallery() {
     var g = $("#galleryGrid"); if (!g) return;
@@ -190,17 +193,6 @@
       if (e.key === "Escape") closeLightbox();
       if (e.key === "ArrowRight") lbStep(1);
       if (e.key === "ArrowLeft") lbStep(-1);
-    });
-  }
-
-  /* ---------- Marquee (duplicate for seamless loop) ---------- */
-  function buildMarquee() {
-    var m = $("#marquee"); if (!m) return;
-    // remove any previous clone
-    m.querySelectorAll("[data-clone]").forEach(function (n) { n.remove(); });
-    var originals = $$("span", m).filter(function (s) { return !s.hasAttribute("data-clone"); });
-    originals.forEach(function (s) {
-      var c = s.cloneNode(true); c.setAttribute("data-clone", "1"); m.appendChild(c);
     });
   }
 
@@ -283,7 +275,6 @@
   renderMenu();
   renderFeatured();
   renderGallery();
-  buildMarquee();
   observeReveals();
   onScroll();
 })();

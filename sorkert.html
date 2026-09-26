@@ -13,9 +13,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css?v=11">
-<link rel="stylesheet" href="assets/css/theme.css?v=11">
-<script src="assets/js/theme.js?v=11"></script>
+<link rel="stylesheet" href="assets/css/style.css?v=12">
+<link rel="stylesheet" href="assets/css/theme.css?v=12">
+<script src="assets/js/theme.js?v=12"></script>
 </head>
 <body data-page="sorkert">
 <div class="nav-scrim" data-close-nav></div>
@@ -29,6 +29,7 @@
       <a class="nav__link" href="galeria.html" data-i18n="nav_gallery">Galéria</a>
       <a class="nav__link" href="rolunk.html" data-i18n="nav_about">Rólunk</a>
       <a class="nav__link nav__link--sk active" href="sorkert.html" data-i18n="nav_sorkert">Sörkert</a>
+      <a class="nav__link" href="sorlap.html" data-i18n="nav_drinks">Itallap</a>
       <a class="nav__link" href="utalvany.html" data-i18n="nav_vouchers">Utalvány</a>
       <a class="nav__link" href="kapcsolat.html" data-i18n="nav_contact">Elérhetőség</a>
     </nav>
@@ -45,7 +46,7 @@
 
 <!-- HERO -->
 <section class="sk-hero">
-  <div class="sk-hero__bg" style="background-image:url('assets/img/bg-texture.jpg')"></div>
+  <div class="sk-hero__bg" style="background-image:url('assets/img/backgrounds/bg-sorkert.jpg')"></div>
   <div class="container sk-hero__inner">
     <span class="hero__badge reveal in"><span class="dot"></span><span data-i18n="sk_badge">Duna-parti sörkert</span></span>
     <h1 class="reveal in"><span data-i18n="sk_title_a">Hűs sörök,</span><em data-i18n="sk_title_b">chill esték a Duna-parton.</em></h1>
@@ -57,7 +58,7 @@
 <section class="section">
   <div class="container about__grid">
     <div class="about__media reveal reveal--scale">
-      <img src="assets/img/food-spread.jpg" alt="Wolf Burger Sörkert">
+      <img src="assets/img/gallery/sorkert-wide.jpg" alt="Wolf Burger Sörkert esti hangulat">
       <div class="badge-year"><b>🍺</b><small data-i18n="nav_sorkert">Sörkert</small></div>
     </div>
     <div class="about__text">
@@ -77,52 +78,42 @@
   </div>
 </section>
 
-<!-- BEERS -->
-<section class="section section--tight">
+<!-- NYITVATARTÁS (szezonális) -->
+<section class="section section--tight" style="padding-top:0">
   <div class="container">
-    <div class="section-head">
-      <span class="eyebrow reveal" data-i18n="sk_beer_title">Csapon nálunk</span>
-      <h2 class="section-title reveal d1" data-i18n="sk_beer_title">Csapon nálunk</h2>
-      <p class="lead reveal d2" data-i18n="sk_beer_sub"></p>
+    <div class="sorlap-info reveal">
+      <div class="sorlap-info__item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+        <div><b data-i18n="sk_hours_t">Sörkert nyitvatartás</b><span data-i18n="sk_hours_v">Minden nap 15:30–23:00</span></div>
+      </div>
+      <div class="sorlap-info__item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Z"/><path d="M8 12h8M12 8v8"/></svg>
+        <div><b data-i18n="sk_seasonal_t">Szezonális üzem</b><span data-i18n="sk_seasonal_v">A várható nyitásról/zárásról a Facebookon tájékoztatunk.</span></div>
+      </div>
+      <div class="sorlap-info__item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M17 10.5V7a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-3.5l4 4v-11z"/></svg>
+        <div><b data-i18n="sk_screen_t">Óriás kivetítő</b><span data-i18n="sk_screen_v">Közel 100 férőhely, meccsek nagyban.</span></div>
+      </div>
     </div>
-    <div class="drink-list reveal" id="beerList"></div>
   </div>
 </section>
 
-<!-- FRÖCCSÖK -->
+<!-- ITALLAP CTA -->
 <section class="section section--tight" style="padding-top:0">
   <div class="container">
-    <div class="section-head">
-      <span class="eyebrow reveal" data-i18n="sk_froccs_title">Fröccsök</span>
-      <h2 class="section-title reveal d1" data-i18n="sk_froccs_title">Fröccsök</h2>
-      <p class="lead reveal d2" data-i18n="sk_froccs_sub"></p>
+    <div class="sk-drinks-cta reveal">
+      <div class="sk-drinks-cta__media">
+        <img src="assets/img/gallery/wolf-burger-kez.jpg" alt="Wolf burger és Somersby a sörkertben" loading="lazy">
+      </div>
+      <div class="sk-drinks-cta__body">
+        <span class="eyebrow" data-i18n="sk_beer_title">Csapon nálunk</span>
+        <h2 class="section-title" style="font-size:clamp(1.9rem,4.4vw,2.9rem);margin:12px 0 12px" data-i18n="sk_drinks_title">Csapolt sörök, pálinkák, fröccsök</h2>
+        <p class="lead" data-i18n="sk_drinks_sub">Carlsberg, Tuborg, Budweiser, 1664 Blanc, Horizont IPA és Belle Vue Kriek csapon — mellé prémium Panyolai pálinkák, fröccsök és házi limonádé.</p>
+        <div style="margin-top:24px">
+          <a href="sorlap.html" class="btn btn--lg" data-i18n="sk_drinks_btn">Teljes itallap megtekintése</a>
+        </div>
+      </div>
     </div>
-    <div class="drink-list reveal" id="froccsList"></div>
-  </div>
-</section>
-
-<!-- ÜDÍTŐK & LIMONÁDÉK -->
-<section class="section section--tight" style="padding-top:0">
-  <div class="container">
-    <div class="section-head">
-      <span class="eyebrow reveal" data-i18n="sk_soft_title">Üdítők &amp; limonádék</span>
-      <h2 class="section-title reveal d1" data-i18n="sk_soft_title">Üdítők &amp; limonádék</h2>
-      <p class="lead reveal d2" data-i18n="sk_soft_sub"></p>
-    </div>
-    <div class="drink-list reveal" id="softList"></div>
-  </div>
-</section>
-
-<!-- KÁVÉK -->
-<section class="section section--tight" style="padding-top:0">
-  <div class="container">
-    <div class="section-head">
-      <span class="eyebrow reveal" data-i18n="sk_coffee_title">Kávék</span>
-      <h2 class="section-title reveal d1" data-i18n="sk_coffee_title">Kávék</h2>
-      <p class="lead reveal d2" data-i18n="sk_coffee_sub"></p>
-    </div>
-    <div class="drink-list reveal" id="coffeeList"></div>
-    <p class="menu-note reveal" style="margin-top:24px" data-i18n="sk_18"></p>
   </div>
 </section>
 
@@ -163,8 +154,8 @@
   <button class="theme-opt" data-theme-set="3"><span class="theme-swatch sw3"></span><span data-i18n="theme_3">Tűz & fa</span></button>
 </div>
 
-<script src="assets/js/menu-data.js?v=11"></script>
-<script src="assets/js/i18n.js?v=11"></script>
-<script src="assets/js/site.js?v=11"></script>
+<script src="assets/js/menu-data.js?v=12"></script>
+<script src="assets/js/i18n.js?v=12"></script>
+<script src="assets/js/site.js?v=12"></script>
 </body>
 </html>

@@ -13,9 +13,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css?v=11">
-<link rel="stylesheet" href="assets/css/theme.css?v=11">
-<script src="assets/js/theme.js?v=11"></script>
+<link rel="stylesheet" href="assets/css/style.css?v=12">
+<link rel="stylesheet" href="assets/css/theme.css?v=12">
+<script src="assets/js/theme.js?v=12"></script>
 </head>
 <body data-page="galeria">
 <div class="nav-scrim" data-close-nav></div>
@@ -29,6 +29,7 @@
       <a class="nav__link active" href="galeria.html" data-i18n="nav_gallery">Galéria</a>
       <a class="nav__link" href="rolunk.html" data-i18n="nav_about">Rólunk</a>
       <a class="nav__link nav__link--sk" href="sorkert.html" data-i18n="nav_sorkert">Sörkert</a>
+      <a class="nav__link" href="sorlap.html" data-i18n="nav_drinks">Itallap</a>
       <a class="nav__link" href="utalvany.html" data-i18n="nav_vouchers">Utalvány</a>
       <a class="nav__link" href="kapcsolat.html" data-i18n="nav_contact">Elérhetőség</a>
     </nav>
@@ -90,29 +91,35 @@
   <button class="theme-opt active" data-theme-set="3"><span class="theme-swatch sw3"></span><span data-i18n="theme_3">Tűz & fa</span></button>
 </div>
 
-<script src="assets/js/menu-data.js?v=11"></script>
-<script src="assets/js/i18n.js?v=11"></script>
-<script src="assets/js/site.js?v=11"></script>
+<script src="assets/js/menu-data.js?v=12"></script>
+<script src="assets/js/i18n.js?v=12"></script>
+<script src="assets/js/site.js?v=12"></script>
 <script>
 /* Galéria: ételfotó-rács + lightbox (önálló, csak ezen az oldalon) */
 (function () {
   var GAL = [
-    { src: "assets/img/menu/wolf-cover.jpg", cls: "wide", alt: "Wolf Burger" },
-    { src: "assets/img/menu/wolf-burger.jpg", cls: "tall", alt: "Wolf burger" },
+    { src: "assets/img/gallery/sorkert-wide.jpg", cls: "wide", alt: "Sörkert esti hangulat" },
+    { src: "assets/img/menu/wolf-cover.jpg", cls: "tall", alt: "Wolf Burger" },
+    { src: "assets/img/gallery/rendelo-kunyho.jpg", cls: "tall", alt: "A rusztikus rendelő kunyhó" },
+    { src: "assets/img/gallery/terasz-rozsak.jpg", cls: "", alt: "Fedett terasz rózsákkal" },
+    { src: "assets/img/menu/wolf-burger.jpg", cls: "", alt: "Wolf burger" },
+    { src: "assets/img/gallery/fuzerfeny-este.jpg", cls: "wide", alt: "Fűzérfényes este a sörkertben" },
+    { src: "assets/img/gallery/teke-jatek.jpg", cls: "", alt: "Kerti teke-játék" },
     { src: "assets/img/menu/fonok-kedvence-burger.jpg", cls: "", alt: "Főnök kedvence burger" },
+    { src: "assets/img/gallery/nagy-kivetito.jpg", cls: "", alt: "Óriás kivetítő a sörkertben" },
+    { src: "assets/img/gallery/sorkert-nappal.jpg", cls: "wide", alt: "Sörkert nappal, tele vendégekkel" },
     { src: "assets/img/menu/smash-burger.jpg", cls: "", alt: "Smash burger" },
-    { src: "assets/img/menu/bbq-burger.jpg", cls: "", alt: "BBQ burger" },
-    { src: "assets/img/menu/cheddar-burgonyatal.jpg", cls: "wide", alt: "Cheddar sajtszószos burgonyatál" },
-    { src: "assets/img/menu/classic-burger.jpg", cls: "", alt: "Classic burger" },
-    { src: "assets/img/menu/csirkes-burger.jpg", cls: "", alt: "Csirkés burger" },
-    { src: "assets/img/menu/camembert-burger.jpg", cls: "", alt: "Camembert-es vega burger" },
-    { src: "assets/img/menu/sajt-burger.jpg", cls: "", alt: "Sajtburger" },
+    { src: "assets/img/gallery/hordo-levendula.jpg", cls: "tall", alt: "Boroshordó levendulával" },
+    { src: "assets/img/menu/cheddar-burgonyatal.jpg", cls: "", alt: "Cheddar sajtszószos burgonyatál" },
+    { src: "assets/img/gallery/wolf-burger-kez.jpg", cls: "", alt: "Wolf burger a sörkertben" },
+    { src: "assets/img/gallery/sorfozde-pult.jpg", cls: "", alt: "A sörfőzde pult" },
     { src: "assets/img/menu/wolf-closeup.jpg", cls: "tall", alt: "Wolf Burger közelről" },
+    { src: "assets/img/gallery/sorkert-este.jpg", cls: "wide", alt: "Sörkert este, fűzérfényben" },
+    { src: "assets/img/gallery/tal-valogatas.jpg", cls: "", alt: "Tál válogatás" },
     { src: "assets/img/menu/churros.jpg", cls: "", alt: "Churros" },
-    { src: "assets/img/menu/nuggets-burger.jpg", cls: "", alt: "Csirke nuggets burger" },
-    { src: "assets/img/menu/hagymakarika.jpg", cls: "", alt: "Hagymakarikák" },
-    { src: "assets/img/menu/v-burgonya.jpg", cls: "", alt: "„V” alakú héjas burgonyacikk" },
-    { src: "assets/img/menu/mini-burger.jpg", cls: "", alt: "Mini burger" }
+    { src: "assets/img/menu/csirkes-burger.jpg", cls: "", alt: "Csirkés burger" },
+    { src: "assets/img/gallery/sorkert-terasz.jpg", cls: "", alt: "Fedett terasz" },
+    { src: "assets/img/gallery/wolf-tabla.jpg", cls: "", alt: "Wolf Burger tábla" }
   ];
   var grid = document.getElementById("galleryGrid");
   if (!grid) return;

@@ -12,10 +12,6 @@ window.WB_MENU = {
     { id: "koretek",   hu: "Köretek",    en: "Sides" },
     { id: "falatkak",  hu: "Falatkák",   en: "Bites" },
     { id: "desszert",  hu: "Desszert",   en: "Dessert" },
-    { id: "italok",    hu: "Üdítők",     en: "Soft drinks" },
-    { id: "sorok",     hu: "Sörök",      en: "Craft beers" },
-    { id: "froccsok",  hu: "Fröccsök",   en: "Wine spritzers" },
-    { id: "kavek",     hu: "Kávék",      en: "Coffee" },
     { id: "extrak",    hu: "Extrák",     en: "Extras" }
   ],
 
@@ -81,51 +77,6 @@ window.WB_MENU = {
       { name:"Churros", b:1390, img:"assets/img/menu/churros.jpg", thumb:"assets/img/menu/churros.jpg", kcal:175, macros:[4,1,37], nutri:[0.5,0.0,37.1,6.3,2.1,4.3,0.9], allergens:"GLUTÉN, MUSTÁR, SZÓJA", hu:"Fahéjas cukorral, csokoládé öntettel.", en:"With cinnamon sugar and chocolate sauce." }
     ],
 
-    italok: [
-      { name:"Házi limonádé", b:790, b2:990, unit:"3 dl", unit2:"5 dl", tags:["new"], img:"assets/img/menu/limonade.jpg", thumb:"assets/img/menu/limonade.jpg",
-        hu:"Többféle ízben, cukormentesen is. Aktuális ízekért érdeklődj a pultnál!",
-        en:"Several flavours, sugar-free option too. Ask at the counter for today's flavours!" },
-      { name:"Coca-Cola termékek 0,5 l", b:890, hu:"", en:"" },
-      { name:"NaturAqua ásványvíz 0,5 l", b:620, hu:"", en:"" },
-      { name:"NaturAqua emotion 0,5 l", b:720, hu:"", en:"" },
-      { name:"Cappy gyümölcslevek 0,33 l", b:890, hu:"", en:"" },
-      { name:"Burn energiaital 0,25 l", b:590, tags:["hot"], hu:"18+ – 18 éven aluliaknak nem adható ki.", en:"18+ only." },
-      { name:"Kubu gyümölcslé 0,3 l", b:790, hu:"", en:"" },
-      { name:"Szóda 0,1 l", b:50, hu:"", en:"" }
-    ],
-
-    sorok: [
-      { name:"Világos köleses sör – csapolt", b:990, b2:1490, unit:"3 dl", unit2:"5 dl",
-        hu:"Jászdózsai Sörfőzde – Bandusz által.", en:"Jászdózsa Brewery – by Bandusz." },
-      { name:"Laza morál – session IPA, csapolt", b:1090, b2:1690, unit:"3 dl", unit2:"5 dl", tags:["new"],
-        hu:"Szent András Sörfőzde.", en:"Szent András Brewery." },
-      { name:"Meggyes sör – csapolt", b:null,
-        hu:"Beertailor Sörfőzde. Áráért érdeklődj a pultnál.", en:"Beertailor Brewery. Ask at the counter." },
-      { name:"Búza sör – csapolt", b:null,
-        hu:"Beertailor Sörfőzde. Áráért érdeklődj a pultnál.", en:"Beertailor Brewery. Ask at the counter." },
-      { name:"Alkoholmentes „majdnem pilsner” 0,33 l", b:1090,
-        hu:"Szent András Sörfőzde – üveges.", en:"Szent András Brewery – bottled." }
-    ],
-
-    froccsok: [
-      { name:"Boraink (Nyakas Irsai Olivér / Rosé)", b:600, hu:"Választható fehér vagy rosé.", en:"White or rosé to choose." },
-      { name:"+ Szóda", b:50, hu:"", en:"" },
-      { name:"Kisfröccs", b:650, hu:"1 dl bor, 1 dl szóda.", en:"1 dl wine, 1 dl soda." },
-      { name:"Nagyfröccs", b:1250, hu:"2 dl bor, 1 dl szóda.", en:"2 dl wine, 1 dl soda." },
-      { name:"Hosszúlépés", b:700, hu:"1 dl bor, 2 dl szóda.", en:"1 dl wine, 2 dl soda." },
-      { name:"Sportfröccs", b:800, hu:"1 dl bor, 4 dl szóda.", en:"1 dl wine, 4 dl soda." },
-      { name:"Viceházmester", b:1350, hu:"2 dl bor, 3 dl szóda.", en:"2 dl wine, 3 dl soda." },
-      { name:"Házmester", b:1900, hu:"3 dl bor, 2 dl szóda.", en:"3 dl wine, 2 dl soda." },
-      { name:"Háziúr", b:2450, hu:"4 dl bor, 1 dl szóda.", en:"4 dl wine, 1 dl soda." }
-    ],
-
-    kavek: [
-      { name:"Espresso", b:690, hu:"", en:"" },
-      { name:"Hosszúkávé", b:690, hu:"", en:"" },
-      { name:"Cappuccino", b:890, hu:"", en:"" },
-      { name:"Caffè latte", b:890, hu:"", en:"" }
-    ],
-
     extrak: [
       { name:"Laktózmentes sajt", b:150, hu:"Csere esetén ingyenes.", en:"Free when swapped." },
       { name:"Gluténmentes buci", b:490, hu:"", en:"" },
@@ -139,5 +90,86 @@ window.WB_MENU = {
       { name:"Szószok", b:650, hu:"Classic majonéz, konfitált fokhagymás majonéz, ketchup, BBQ, édes chili, bivalyerős chili.",
         en:"Classic mayo, confit garlic mayo, ketchup, BBQ, sweet chilli, extra-hot chilli." }
     ]
+  },
+
+  /* ============================================================
+     ITALLAP / SÖRKERT — hivatalos "Sörkert" dokumentum (2026.09)
+     size = [egység, ár]; brand = márka-azonosító a csapolt söröknél
+     ============================================================ */
+  drinks: {
+    cats: [
+      { id:"csapolt",       hu:"Csapolt sörök",       en:"Draught beers" },
+      { id:"uveges",        hu:"Üveges sörök",         en:"Bottled beers" },
+      { id:"rovid",         hu:"Röviditalok",          en:"Spirits" },
+      { id:"palinka",       hu:"Prémium pálinkák",     en:"Premium pálinka" },
+      { id:"froccs",        hu:"Fröccsök",             en:"Wine spritzers" },
+      { id:"alkoholmentes", hu:"Alkoholmentes italok", en:"Soft drinks" },
+      { id:"kave",          hu:"Kávék",                en:"Coffee" },
+      { id:"snack",         hu:"Ropogtatnivalók",      en:"Snacks" }
+    ],
+    notes: {
+      froccs:  { hu:"Varga Ház Bora — Olaszrizling és Rozé.", en:"Varga House wine — Olaszrizling & Rosé." }
+    },
+    items: {
+      csapolt: [
+        { name:"Carlsberg", brand:"Carlsberg", bc:"#0f7b3f", sizes:[["0,3 l",790],["0,5 l",1190]] },
+        { name:"Tuborg", brand:"Tuborg", bc:"#0a67b3", sizes:[["0,3 l",790],["0,5 l",1190]] },
+        { name:"Budweiser", brand:"Budweiser", bc:"#b5121b", sizes:[["0,3 l",990],["0,5 l",1390]] },
+        { name:"1664 Blanc", brand:"1664 Blanc", bc:"#2a6cc9", sizes:[["0,3 l",990],["0,5 l",1390]],
+          hu:"Franciás, koriander-narancsos búzasör.", en:"French coriander-orange wheat beer." },
+        { name:"Horizont IPA", brand:"Horizont", bc:"#e0632b", sizes:[["0,3 l",1090],["0,5 l",1690]], tags:["new"],
+          hu:"Kézműves, komlós IPA.", en:"Hoppy craft IPA." },
+        { name:"Belle Vue Kriek", brand:"Belle Vue", bc:"#9c1f3a", sizes:[["0,3 l",1190],["0,5 l",1890]],
+          hu:"Belga meggyes sör.", en:"Belgian cherry lambic." }
+      ],
+      uveges: [
+        { name:"Budweiser 0.0%", brand:"Budweiser", bc:"#b5121b", sizes:[["0,33 l",1090]],
+          hu:"Alkoholmentes.", en:"Alcohol-free." },
+        { name:"Somersby", brand:"Somersby", bc:"#1f8a3b", sizes:[["0,33 l",1090]],
+          hu:"Almás cider.", en:"Apple cider." }
+      ],
+      rovid: [
+        { name:"Jägermeister", sizes:[["2 cl",590],["4 cl",990]] },
+        { name:"Unicum", sizes:[["2 cl",690],["4 cl",1090]] },
+        { name:"Finlandia vodka", sizes:[["2 cl",590],["4 cl",990]] },
+        { name:"Beefeater gin", sizes:[["2 cl",690],["4 cl",1090]] },
+        { name:"Jameson whiskey", sizes:[["2 cl",790],["4 cl",1390]] },
+        { name:"Sierra tequila silver", sizes:[["2 cl",790],["4 cl",1390]] }
+      ],
+      palinka: [
+        { name:"Panyolai elixír – birsalma", sizes:[["2 cl",1490],["4 cl",2690]] },
+        { name:"Panyolai elixír – fürtös meggy", sizes:[["2 cl",1390],["4 cl",2490]] },
+        { name:"Panyolai elixír – kajszibarack", sizes:[["2 cl",1590],["4 cl",2990]] }
+      ],
+      froccs: [
+        { name:"Kisfröccs", sizes:[["1 dl bor, 1 dl szóda",450]] },
+        { name:"Nagyfröccs", sizes:[["2 dl bor, 1 dl szóda",850]] },
+        { name:"Hosszúlépés", sizes:[["1 dl bor, 2 dl szóda",500]] },
+        { name:"Sportfröccs", sizes:[["1 dl bor, 4 dl szóda",600]] },
+        { name:"Viceházmester", sizes:[["2 dl bor, 3 dl szóda",950]] },
+        { name:"Házmester", sizes:[["3 dl bor, 2 dl szóda",1300]] },
+        { name:"Háziúr", sizes:[["4 dl bor, 1 dl szóda",1650]] }
+      ],
+      alkoholmentes: [
+        { name:"Házi limonádé", sizes:[["3 dl",790],["5 dl",990]], tags:["new"],
+          hu:"Több ízben — kérdezd a pultnál.", en:"Several flavours — ask at the counter." },
+        { name:"Coca-Cola termékek", sizes:[["0,5 l",890]] },
+        { name:"NaturAqua ásványvíz", sizes:[["0,5 l",620]] },
+        { name:"Cappy gyümölcslevek", sizes:[["0,33 l",890]] },
+        { name:"Burn energiaital", sizes:[["0,2 l",590]], tags:["hot"], hu:"18+", en:"18+" },
+        { name:"Szóda", sizes:[["0,1 l",50]] }
+      ],
+      kave: [
+        { name:"Espresso", sizes:[["",690]] },
+        { name:"Cappuccino", sizes:[["",890]] },
+        { name:"Caffè latte", sizes:[["",890]] }
+      ],
+      snack: [
+        { name:"Nógrádi ropi", sizes:[["45 g",400]] },
+        { name:"Mogyi földimogyoró", sizes:[["70 g",600]] },
+        { name:"Lay's chips – snidlinges-tejfölös", sizes:[["60 g",900]] },
+        { name:"Lay's chips – chilis-limeos", sizes:[["55 g",900]] }
+      ]
+    }
   }
 };
