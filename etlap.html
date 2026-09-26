@@ -1,11 +1,15 @@
 <!DOCTYPE html>
-<html lang="hu">
+<html lang="hu" data-default-theme="3">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Termék – Wolf Burger</title>
-<meta name="description" content="Wolf Burger termék részletei — összetevők, tápérték, ár.">
+<title>Étlap – Wolf Burger | Szaftos burgerek, köretek, falatkák</title>
+<meta name="description" content="A Wolf Burger teljes étlapja Szigethalmon — 100% marhahúsos burgerek, ropogós köretek, falatkák és desszertek, hivatalos tápértékkel és allergénekkel.">
+<meta name="theme-color" content="#0d0d0f">
 <link rel="icon" type="image/png" href="favicon.png">
+<meta property="og:title" content="Wolf Burger – Étlap">
+<meta property="og:description" content="Szaftos, 100% marhahúsos burgerek, köretek és falatkák a Duna partján.">
+<meta property="og:image" content="assets/img/menu/wolf-cover.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@500;600;700&display=swap" rel="stylesheet">
@@ -13,14 +17,14 @@
 <link rel="stylesheet" href="assets/css/theme.css?v=15">
 <script src="assets/js/theme.js?v=15"></script>
 </head>
-<body data-page="termek">
+<body data-page="etlap">
 <div class="nav-scrim" data-close-nav></div>
 
-<header class="header scrolled" id="header">
+<header class="header" id="header">
   <div class="container nav">
     <a href="index.html" class="nav__logo" aria-label="Wolf Burger"><img src="assets/img/logo.png" alt="Wolf Burger"></a>
     <nav class="nav__menu" id="navMenu">
-      <a class="nav__link" href="etlap.html" data-i18n="nav_menu">Étlap</a>
+      <a class="nav__link active" href="etlap.html" data-i18n="nav_menu">Étlap</a>
       <a class="nav__link" href="index.html#delivery" data-i18n="nav_delivery">Rendelés</a>
       <a class="nav__link" href="galeria.html" data-i18n="nav_gallery">Galéria</a>
       <a class="nav__link" href="rolunk.html" data-i18n="nav_about">Rólunk</a>
@@ -40,7 +44,30 @@
   </div>
 </header>
 
-<main class="container product" id="productDetail"><!-- rendered by site.js --></main>
+<section class="page-hero">
+  <div class="container">
+    <span class="eyebrow reveal in" data-i18n="menu_eyebrow">Étlapunk</span>
+    <h1 class="reveal in" data-i18n="menu_title">Válaszd ki a falkavezéred</h1>
+    <p class="lead center reveal in d1" data-i18n="menu_sub"></p>
+  </div>
+</section>
+
+<section class="section subpage-first" id="menu">
+  <div class="container">
+    <div class="menu-tabs reveal" id="menuTabs"></div>
+    <div id="menuPanels"></div>
+    <div class="menu-legend reveal">
+      <span><span class="tag tag--new">ÚJ</span> <span data-i18n="legend_new">Újdonság</span></span>
+      <span><span class="tag tag--vega">VEGA</span> <span data-i18n="legend_vega">Vega</span></span>
+      <span><span class="legend-chili">🌶️</span> <span data-i18n="legend_hot">Csípős</span></span>
+      <span><span class="tag tag--kid">GYEREK</span> <span data-i18n="legend_kid">Gyerek kedvenc</span></span>
+    </div>
+    <p class="menu-note reveal" data-i18n="menu_note"></p>
+    <div class="center" style="margin-top:26px">
+      <a href="assets/img/menu/etlap-2026-07.png" target="_blank" rel="noopener" class="btn btn--ghost" data-i18n="menu_download">Étlap letöltése (PNG)</a>
+    </div>
+  </div>
+</section>
 
 <footer class="footer">
   <div class="container">
@@ -62,9 +89,9 @@
 </button>
 <div class="theme-panel" id="themePanel">
   <h6 data-i18n="theme_label">Hangulat</h6>
-  <button class="theme-opt active" data-theme-set="1"><span class="theme-swatch sw1"></span><span data-i18n="theme_1">Jeges</span></button>
+  <button class="theme-opt" data-theme-set="1"><span class="theme-swatch sw1"></span><span data-i18n="theme_1">Jeges</span></button>
   <button class="theme-opt" data-theme-set="2"><span class="theme-swatch sw2"></span><span data-i18n="theme_2">Naplemente</span></button>
-  <button class="theme-opt" data-theme-set="3"><span class="theme-swatch sw3"></span><span data-i18n="theme_3">Tűz & fa</span></button>
+  <button class="theme-opt active" data-theme-set="3"><span class="theme-swatch sw3"></span><span data-i18n="theme_3">Tűz & fa</span></button>
 </div>
 
 <script src="assets/js/menu-data.js?v=15"></script>

@@ -104,6 +104,7 @@
   function renderMenu() {
     if (!MENU) return;
     var tabsWrap = $("#menuTabs"), panelsWrap = $("#menuPanels");
+    if (!tabsWrap || !panelsWrap) return; // az étlap külön oldalon (etlap.html) él, a főoldalon nincs
     tabsWrap.innerHTML = ""; panelsWrap.innerHTML = "";
     MENU.categories.forEach(function (cat, i) {
       var tab = el("button", "menu-tab" + (i === 0 ? " active" : ""), cat[LANG]);
@@ -210,7 +211,7 @@
 
   /* ---------- Header + scrollspy ---------- */
   var header = $("#header");
-  var sections = ["home", "about", "menu", "delivery", "gallery", "vouchers", "contact"];
+  var sections = ["home", "about", "delivery", "gallery", "vouchers", "contact"];
   function onScroll() {
     var y = window.pageYOffset;
     header.classList.toggle("scrolled", y > 40);

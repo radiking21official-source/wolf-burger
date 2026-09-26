@@ -40,6 +40,7 @@
     LANG = l; localStorage.setItem("wb_lang", l); applyI18n();
     if ($("#productDetail")) renderProduct();
     if ($("#sorlapRoot")) renderDrinks();
+    if ($("#menuTabs")) renderMenu();
   }
 
   /* ---------- Product detail ---------- */
@@ -112,7 +113,7 @@
     try { id = new URLSearchParams(location.search).get("id") || ""; } catch (e) {}
     var found = findItem(id);
     if (!found) {
-      host.innerHTML = '<a class="back" href="index.html#menu">← ' + (d.prod_back || "Vissza") + '</a>' +
+      host.innerHTML = '<a class="back" href="etlap.html">← ' + (d.prod_back || "Vissza") + '</a>' +
         '<h1>' + (d.prod_notfound || "Nem található") + '</h1>';
       return;
     }
@@ -131,10 +132,10 @@
       '<div class="product__order">' +
       '<a class="btn" href="https://wolt.com/hu/hun/szigetszentmiklos/restaurant/wolf-burger-szigetszentmiklos" target="_blank" rel="noopener">Wolt</a>' +
       '<a class="btn btn--ghost" href="https://www.foodora.hu/restaurant/xna1/wolf-burger" target="_blank" rel="noopener">foodora</a>' +
-      '<a class="btn btn--ghost" href="index.html#menu">' + (d.prod_details_cta || "Étlap") + '</a>' +
+      '<a class="btn btn--ghost" href="etlap.html">' + (d.prod_details_cta || "Étlap") + '</a>' +
       '</div>';
     host.innerHTML =
-      '<a class="back" href="index.html#menu">← ' + (d.prod_back || "Vissza") + '</a>' +
+      '<a class="back" href="etlap.html">← ' + (d.prod_back || "Vissza") + '</a>' +
       '<div class="product__grid">' +
       '<div class="product__media">' + media + '</div>' +
       '<div class="product__info">' +
@@ -201,6 +202,66 @@
     });
   }
 
+  /* ---------- Étlap (etlap.html) ---------- */
+  function cardPrice(it) {
+    var d = I18N[LANG] || {};
+    if (it.b === null || it.b === undefined) return '<b style="font-size:.92rem">' + (d.price_ask || "—") + '</b>';
+    var small = "";
+    if (it.m) small = (d.menu_menu_label || "Menü") + " " + fmt(it.m);
+    else if (it.b2) small = it.unit + " / " + it.unit2 + " " + fmt(it.b2);
+    else if (it.unit) small = it.unit;
+    return '<b>' + fmt(it.b) + '</b>' + (small ? '<small>' + small + '</small>' : "");
+  }
+  function menuCard(it, catId) {
+    var d = I18N[LANG] || {};
+    var img = it.img || it.thumb;
+    var isHot = (it.tags || []).indexOf("hot") > -1;
+    var badges = (it.tags || []).filter(function (t) { return t !== "hot"; }).map(tagBadge).join("");
+    var nameHtml = it.name + (isHot ? ' <span class="chili" title="' + (LANG === "en" ? "Spicy" : "Csípős") + '">🌶️</span>' : "");
+    var posStyle = it.pos ? ' style="object-position:' + it.pos + '"' : "";
+    var media = '<div class="pcard__media">' +
+      (img ? '<img src="' + img + '" alt="' + it.name + '" loading="lazy"' + posStyle + '><div class="pcard__grad"></div>'
+           : '<div class="pcard__ph">' + (CAT_EMOJI[catId] || "🍔") + '</div>') +
+      (badges ? '<div class="pcard__badges">' + badges + '</div>' : '') +
+      '<span class="pcard__details">' + (d.details || "Részletek") +
+        '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m9 18 6-6-6-6"/></svg></span>' +
+      '</div>';
+    var body = '<div class="pcard__body"><div class="pcard__top">' +
+      '<div class="pcard__name">' + nameHtml + '</div>' +
+      '<div class="pcard__price">' + cardPrice(it) + '</div></div>' +
+      (it[LANG] ? '<div class="pcard__ing">' + it[LANG] + '</div>' : '') +
+      (it.kcal ? '<div class="pcard__kcal">~ <b>' + it.kcal + '</b> ' + (d.kcal_label || "kcal") + '</div>' : '') +
+      '</div>';
+    var a = el("a", "pcard", media + body);
+    a.href = "termek.html?id=" + slugify(it.name);
+    return a;
+  }
+  function renderMenu() {
+    var tabsWrap = $("#menuTabs"), panelsWrap = $("#menuPanels");
+    if (!MENU || !tabsWrap || !panelsWrap) return;
+    tabsWrap.innerHTML = ""; panelsWrap.innerHTML = "";
+    MENU.categories.forEach(function (cat, i) {
+      var tab = el("button", "menu-tab" + (i === 0 ? " active" : ""), cat[LANG]);
+      tab.setAttribute("data-cat", cat.id);
+      tabsWrap.appendChild(tab);
+      var panel = el("div", "menu-panel" + (i === 0 ? " active" : ""));
+      panel.id = "panel-" + cat.id;
+      var grid = el("div", "menu-grid");
+      (MENU.items[cat.id] || []).forEach(function (it) { grid.appendChild(menuCard(it, cat.id)); });
+      panel.appendChild(grid);
+      panelsWrap.appendChild(panel);
+    });
+    $$(".menu-tab", tabsWrap).forEach(function (tab) {
+      tab.addEventListener("click", function () {
+        $$(".menu-tab").forEach(function (t) { t.classList.remove("active"); });
+        $$(".menu-panel").forEach(function (p) { p.classList.remove("active"); });
+        tab.classList.add("active");
+        var p = $("#panel-" + tab.getAttribute("data-cat"));
+        if (p) p.classList.add("active");
+      });
+    });
+  }
+
   /* ---------- Shared UI (nav, cookie, toTop, reveal) ---------- */
   function initShared() {
     var header = $("#header");
@@ -258,5 +319,6 @@
   applyI18n();
   renderProduct();
   renderDrinks();
+  renderMenu();
   initShared();
 })();
