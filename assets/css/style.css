@@ -540,6 +540,9 @@ body.nav-open .nav__toggle span::after{transform:translate(-50%,0) rotate(-45deg
   font-family:var(--font-cond);font-weight:600;text-transform:uppercase;
   letter-spacing:.13em;font-size:.72rem;color:#fff;pointer-events:none;
   text-shadow:0 2px 12px rgba(0,0,0,.95);transition:opacity .45s ease}
+/* A scrub-heró alján a görgetés-jelző fölösleges (a videókártyán már van „Görgess"),
+   és zsúfolja a házhozszállítás-chipeket — elrejtjük. */
+.hero-track .hero__scroll{display:none}
 
 /* DESKTOP: kétoszlopos — szöveg balra, kártya jobbra */
 @media (min-width:900px){
@@ -548,16 +551,25 @@ body.nav-open .nav__toggle span::after{transform:translate(-50%,0) rotate(-45deg
   .hero__inner--split{display:grid;grid-template-columns:1.02fr .98fr;gap:52px;
     text-align:left;align-items:center}
   .hero__copy{padding-inline:0}
-  .hero__inner--split h1{font-size:clamp(2.6rem,4.7vw,5.3rem)}
+  .hero__inner--split h1{font-size:clamp(2.4rem,4.3vw,4.8rem)}
   .hero__showcase{justify-content:flex-end;align-items:center}
   .hero__card{width:auto;height:min(64vh,540px);aspect-ratio:900/1304;
     border-radius:20px;border:none;background:transparent;box-shadow:none}
   .hero__video{object-position:center}
-  .hero-track .hero__inner{padding-top:120px;padding-bottom:34px;padding-inline:var(--gutter)}
-  .hero-track .hero__sub{display:block}
-  .hero-track .hero .hero__delivery{display:flex}
+  .hero-track .hero__inner{padding-top:98px;padding-bottom:56px;padding-inline:var(--gutter)}
+  .hero-track .hero__sub{display:block;margin:16px 0 22px}
+  .hero-track .hero .hero__delivery{display:flex;margin-top:16px}
   .hero__inner--split .hero__cta .btn--ghost{display:inline-flex}
   .hero__inner--split .hero__cta .btn{width:auto}
+}
+/* Alacsony desktop-ablak: a hero-tartalom kisebb, hogy a házhozszállítás-chipek
+   biztosan elférjenek (ne vágódjanak le a hero alján). */
+@media (min-width:900px) and (max-height:780px){
+  .hero-track .hero__inner{padding-top:78px;padding-bottom:40px}
+  .hero__inner--split h1{font-size:clamp(2.1rem,3.4vw,3.3rem)}
+  .hero-track .hero__sub{margin:12px 0 16px;font-size:1.02rem}
+  .hero-track .hero .hero__delivery{margin-top:12px}
+  .hero__card{height:min(60vh,470px)}
 }
 
 /* ===== Termékoldal: részletes tápérték-táblázat + allergének ===== */

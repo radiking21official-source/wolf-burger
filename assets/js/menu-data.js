@@ -118,20 +118,20 @@ window.WB_MENU = {
     },
     items: {
       csapolt: [
-        { name:"Carlsberg", brand:"Carlsberg", bc:"#0f7b3f", sizes:[["0,3 l",790],["0,5 l",1190]] },
-        { name:"Tuborg", brand:"Tuborg", bc:"#0a67b3", sizes:[["0,3 l",790],["0,5 l",1190]] },
-        { name:"Budweiser", brand:"Budweiser", bc:"#b5121b", sizes:[["0,3 l",990],["0,5 l",1390]] },
-        { name:"1664 Blanc", brand:"1664 Blanc", bc:"#2a6cc9", sizes:[["0,3 l",990],["0,5 l",1390]],
+        { name:"Carlsberg", brand:"Carlsberg", bc:"#0f7b3f", img:"assets/img/beer/carlsberg.png", sizes:[["0,3 l",790],["0,5 l",1190]] },
+        { name:"Tuborg", brand:"Tuborg", bc:"#0a67b3", img:"assets/img/beer/tuborg.png", sizes:[["0,3 l",790],["0,5 l",1190]] },
+        { name:"Budweiser", brand:"Budweiser", bc:"#b5121b", img:"assets/img/beer/budweiser.png", sizes:[["0,3 l",990],["0,5 l",1390]] },
+        { name:"1664 Blanc", brand:"1664 Blanc", bc:"#2a6cc9", img:"assets/img/beer/1664.png", sizes:[["0,3 l",990],["0,5 l",1390]],
           hu:"Franciás, koriander-narancsos búzasör.", en:"French coriander-orange wheat beer." },
         { name:"Horizont IPA", brand:"Horizont", bc:"#e0632b", sizes:[["0,3 l",1090],["0,5 l",1690]], tags:["new"],
           hu:"Kézműves, komlós IPA.", en:"Hoppy craft IPA." },
-        { name:"Belle Vue Kriek", brand:"Belle Vue", bc:"#9c1f3a", sizes:[["0,3 l",1190],["0,5 l",1890]],
+        { name:"Belle Vue Kriek", brand:"Belle Vue", bc:"#9c1f3a", img:"assets/img/beer/bellevue.png", sizes:[["0,3 l",1190],["0,5 l",1890]],
           hu:"Belga meggyes sör.", en:"Belgian cherry lambic." }
       ],
       uveges: [
-        { name:"Budweiser 0.0%", brand:"Budweiser", bc:"#b5121b", sizes:[["0,33 l",1090]],
+        { name:"Budweiser 0.0%", brand:"Budweiser", bc:"#b5121b", img:"assets/img/beer/budweiser.png", sizes:[["0,33 l",1090]],
           hu:"Alkoholmentes.", en:"Alcohol-free." },
-        { name:"Somersby", brand:"Somersby", bc:"#1f8a3b", sizes:[["0,33 l",1090]],
+        { name:"Somersby", brand:"Somersby", bc:"#1f8a3b", img:"assets/img/beer/somersby.png", sizes:[["0,33 l",1090]],
           hu:"Almás cider.", en:"Apple cider." }
       ],
       rovid: [

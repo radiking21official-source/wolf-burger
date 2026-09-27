@@ -163,7 +163,8 @@
 
   /* ---------- Itallap (sorlap.html) ---------- */
   function drinkRow(it) {
-    var nameHtml = it.brand
+    var thumb = it.img ? '<img class="drink-thumb" src="' + it.img + '" alt="' + it.name + '" loading="lazy">' : "";
+    var nameHtml = (!it.img && it.brand)
       ? '<span class="drink-badge" style="--bc:' + (it.bc || "#8b949b") + '">' + it.name + '</span>'
       : it.name;
     var tags = (it.tags || []).map(tagBadge).join("");
@@ -180,7 +181,8 @@
                        : '<small>' + s[0] + ' · ' + fmt(s[1]) + '</small>';
       }).join("");
     }
-    return el("div", "drink-row",
+    return el("div", "drink-row" + (thumb ? " drink-row--img" : ""),
+      thumb +
       '<div class="drink-row__main"><div class="drink-row__name">' + nameHtml +
         (tags ? ' ' + tags : "") + '</div>' + desc + '</div>' +
       '<div class="drink-row__price">' + price + '</div>');

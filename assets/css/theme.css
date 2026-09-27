@@ -53,8 +53,12 @@
 
 /* Sajtó-kártyák */
 .press-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
-.press-card{display:flex;flex-direction:column;gap:8px;background:var(--bg-2);border:1px solid var(--line);border-radius:var(--radius);padding:22px;transition:.3s var(--ease)}
+.press-card{display:flex;flex-direction:column;background:var(--bg-2);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;transition:.3s var(--ease)}
 .press-card:hover{transform:translateY(-4px);border-color:var(--accent-soft)}
+.press-card__img{aspect-ratio:16/10;overflow:hidden;background:var(--bg-3)}
+.press-card__img img{width:100%;height:100%;object-fit:cover;transition:transform .55s var(--ease)}
+.press-card:hover .press-card__img img{transform:scale(1.06)}
+.press-card__body{display:flex;flex-direction:column;gap:8px;padding:18px;flex:1}
 .press-card b{font-family:var(--font-display);font-size:1.15rem;color:var(--warm);letter-spacing:.4px}
 .press-card span{color:var(--ink-soft);font-size:.92rem;flex:1;line-height:1.4}
 .press-card em{font-style:normal;font-family:var(--font-cond);text-transform:uppercase;letter-spacing:.06em;font-size:.76rem;color:var(--cyan)}
@@ -195,7 +199,8 @@
 .sk-feature svg{width:38px;height:38px;color:var(--warm);margin-bottom:12px}
 .sk-feature span{font-family:var(--font-cond);font-weight:600;text-transform:uppercase;letter-spacing:.04em;font-size:1rem}
 .drink-list{display:grid;grid-template-columns:repeat(2,1fr);gap:2px 48px}
-.drink-row{display:flex;justify-content:space-between;gap:16px;align-items:baseline;padding:16px 0;border-bottom:1px solid var(--line)}
+.drink-row{display:flex;justify-content:space-between;gap:16px;align-items:center;padding:16px 0;border-bottom:1px solid var(--line)}
+.drink-thumb{width:44px;height:64px;object-fit:contain;object-position:center bottom;flex-shrink:0;filter:drop-shadow(0 3px 7px rgba(0,0,0,.55))}
 .drink-row__name{font-family:var(--font-cond);font-weight:700;font-size:1.15rem}
 .drink-row__desc{color:var(--muted);font-size:.86rem;margin-top:2px}
 .drink-row__price{white-space:nowrap;text-align:right;flex-shrink:0}
