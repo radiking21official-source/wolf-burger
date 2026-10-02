@@ -8,7 +8,7 @@
   "use strict";
   var $ = function (s, c) { return (c || document).querySelector(s); };
   var $$ = function (s, c) { return Array.prototype.slice.call((c || document).querySelectorAll(s)); };
-  function fmt(n) { return (n === null || n === undefined) ? "—" : n.toLocaleString("hu-HU") + " Ft"; }
+  function fmt(n) { return (n === null || n === undefined) ? "—" : String(n).replace(/\B(?=(\d{3})+(?!\d))/g, " ") + " Ft"; }
   function el(t, c, h) { var e = document.createElement(t); if (c) e.className = c; if (h !== undefined) e.innerHTML = h; return e; }
   function slugify(s) {
     return s.toLowerCase()
@@ -37,7 +37,7 @@
     $$(".lang button").forEach(function (b) { b.classList.toggle("active", b.getAttribute("data-lang") === LANG); });
   }
   function setLang(l) {
-    LANG = l; localStorage.setItem("wb_lang", l); applyI18n();
+    LANG = l; localStorage.setItem("wb_lang", l); applyI18n(); window.dispatchEvent(new Event("wb:languagechange"));
     if ($("#productDetail")) renderProduct();
     if ($("#sorlapRoot")) renderDrinks();
     if ($("#menuTabs")) renderMenu();
@@ -143,7 +143,6 @@
       '<h1>' + it.name + '</h1>' +
       (tags ? '<div class="product__tags">' + tags + '</div>' : '') +
       '<div class="product__price">' + price + '</div>' +
-      (desc ? '<p class="product__desc">' + desc + '</p>' : '') +
       ing +
       nutriGrid(it) +
       (it.kcal ? '<p class="product__note">' + (d.nutri_note || "") + '</p>' : '') +
@@ -164,9 +163,8 @@
   /* ---------- Itallap (sorlap.html) ---------- */
   function drinkRow(it) {
     var thumb = it.img ? '<img class="drink-thumb" src="' + it.img + '" alt="' + it.name + '" loading="lazy">' : "";
-    var nameHtml = (!it.img && it.brand)
-      ? '<span class="drink-badge" style="--bc:' + (it.bc || "#8b949b") + '">' + it.name + '</span>'
-      : it.name;
+    var brandHtml = it.logo ? '<img class="drink-brand-logo" src="' + it.logo + '" alt="' + (it.brand || it.name) + ' logó" loading="lazy"> <span>' + it.name + '</span>' : (it.brand ? '<span class="drink-badge" style="--bc:' + (it.bc || "#8b949b") + '">' + it.brand + '</span>' + (it.name !== it.brand ? ' <span class="drink-name-label">' + it.name + '</span>' : '') : it.name);
+    var nameHtml = it.logo || it.brand ? brandHtml : it.name;
     var tags = (it.tags || []).map(tagBadge).join("");
     var desc = it[LANG] ? '<div class="drink-row__desc">' + it[LANG] + '</div>' : '';
     var sizes = it.sizes || [];

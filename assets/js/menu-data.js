@@ -53,12 +53,9 @@ window.WB_MENU = {
       { name:"Cheddar sajtszószos burgonyatál", b:4590, tags:["hot"], img:"assets/img/menu/cheddar-burgonyatal.jpg", thumb:"assets/img/menu/cheddar-burgonyatal.jpg", kcal:1615, macros:[26,109,100], nutri:[108.5,28.3,100.4,4.8,0.6,26.0,7.0], allergens:"GLUTÉN, LAKTÓZ, TOJÁS, MUSTÁR",
         hu:"„V” alakú fűszeres héjas burgonyacikk, házi cheddar sajtszósz, wolf majonéz, pirított szárított hagyma, bacon chips, jalapeño, snidling.",
         en:"„V”-cut spiced potato wedges, house cheddar sauce, wolf mayo, crispy onion, bacon chips, jalapeño, chives." },
-      { name:"Vargányás burger", b:null, kcal:975, macros:[42,57,75], nutri:[56.6,26.9,74.6,20.1,1.2,41.7,2.2], allergens:"GLUTÉN, LAKTÓZ, TOJÁS, SZEZÁMMAG",
-        hu:"Buci, vörösáfonya lekvár, saláta, marhahús pogácsa (18 dkg), edami sajt, bacon, barnamártásos vargánya ragu. Áráért érdeklődj a pultnál.",
-        en:"Bun, cranberry jam, lettuce, beef patty (180 g), edam cheese, bacon, porcini ragout in brown sauce. Ask at the counter for the price." },
-      { name:"Tépett sertéshúsos tál", b:null, img:"assets/img/menu/tepett-tal.jpg", thumb:"assets/img/menu/tepett-tal.jpg", kcal:2101, macros:[67,94,138], nutri:[93.8,30.4,137.6,27.9,10.5,67.1,12.2], allergens:"GLUTÉN, LAKTÓZ, TOJÁS, MUSTÁR, KÁLIUM-METABISZULFIT, ZELLER",
-        hu:"Zöldfűszeres hullámos burgonya, BBQ-s tépett sertéshús, cheddar sajtszósz, amerikai káposztasaláta, BBQ szósz, újhagyma. Áráért érdeklődj a pultnál.",
-        en:"Herbed crinkle-cut potatoes, BBQ pulled pork, cheddar cheese sauce, coleslaw, BBQ sauce, spring onion. Ask at the counter for the price." }
+      { name:"Tépett sertéshúsos tál", b:6990, img:"assets/img/menu/tepett-tal.jpg", thumb:"assets/img/menu/tepett-tal.jpg", kcal:2101, macros:[67,94,138], nutri:[93.8,30.4,137.6,27.9,10.5,67.1,12.2], allergens:"GLUTÉN, LAKTÓZ, TOJÁS, MUSTÁR, KÁLIUM-METABISZULFIT, ZELLER",
+        hu:"Zöldfűszeres hullámos burgonya, BBQ-s tépett sertéshús, cheddar sajtszósz, amerikai káposztasaláta, BBQ szósz, újhagyma",
+        en:"Herbed crinkle-cut potatoes, BBQ pulled pork, cheddar cheese sauce, coleslaw, BBQ sauce, spring onion" }
     ],
 
     koretek: [
@@ -135,7 +132,7 @@ window.WB_MENU = {
           hu:"Almás cider.", en:"Apple cider." }
       ],
       rovid: [
-        { name:"Jägermeister", sizes:[["2 cl",590],["4 cl",990]] },
+        { name:"Jägermeister", brand:"Jägermeister", bc:"#6b9b2a", sizes:[["2 cl",590],["4 cl",990]] },
         { name:"Unicum", sizes:[["2 cl",690],["4 cl",1090]] },
         { name:"Finlandia vodka", sizes:[["2 cl",590],["4 cl",990]] },
         { name:"Beefeater gin", sizes:[["2 cl",690],["4 cl",1090]] },
@@ -143,9 +140,9 @@ window.WB_MENU = {
         { name:"Sierra tequila silver", sizes:[["2 cl",790],["4 cl",1390]] }
       ],
       palinka: [
-        { name:"Panyolai elixír – birsalma", sizes:[["2 cl",1490],["4 cl",2690]] },
-        { name:"Panyolai elixír – fürtös meggy", sizes:[["2 cl",1390],["4 cl",2490]] },
-        { name:"Panyolai elixír – kajszibarack", sizes:[["2 cl",1590],["4 cl",2990]] }
+        { name:"Panyolai elixír – birsalma", brand:"Panyolai", bc:"#b8742c", sizes:[["2 cl",1490],["4 cl",2690]] },
+        { name:"Panyolai elixír – fürtös meggy", brand:"Panyolai", bc:"#b8742c", sizes:[["2 cl",1390],["4 cl",2490]] },
+        { name:"Panyolai elixír – kajszibarack", brand:"Panyolai", bc:"#b8742c", sizes:[["2 cl",1590],["4 cl",2990]] }
       ],
       froccs: [
         { name:"Kisfröccs", sizes:[["1 dl bor, 1 dl szóda",450]] },
@@ -157,12 +154,12 @@ window.WB_MENU = {
         { name:"Háziúr", sizes:[["4 dl bor, 1 dl szóda",1650]] }
       ],
       alkoholmentes: [
-        { name:"Házi limonádé", sizes:[["3 dl",790],["5 dl",990]], tags:["new"],
+        { name:"Házi limonádé", sizes:[["3 dl",790],["5 dl",990]],
           hu:"Több ízben — kérdezd a pultnál.", en:"Several flavours — ask at the counter." },
         { name:"Coca-Cola termékek", sizes:[["0,5 l",890]] },
         { name:"NaturAqua ásványvíz", sizes:[["0,5 l",620]] },
         { name:"Cappy gyümölcslevek", sizes:[["0,33 l",890]] },
-        { name:"Burn energiaital", sizes:[["0,2 l",590]], tags:["hot"], hu:"18+", en:"18+" },
+        { name:"Burn energiaital", sizes:[["0,2 l",590]], hu:"18+", en:"18+" },
         { name:"Szóda", sizes:[["0,1 l",50]] }
       ],
       kave: [

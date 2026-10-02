@@ -256,3 +256,22 @@
   .theme-fab{left:16px;bottom:16px;width:46px;height:46px}
   .theme-panel{left:16px;bottom:74px}
 }
+
+/* Full-surface wood / pallet treatment for feature cards. */
+:root[data-theme="3"] .value,
+:root[data-theme="3"] .vcard,
+:root[data-theme="3"] .dcard,
+:root[data-theme="3"] .sk-feature,
+:root[data-theme="3"] .stat,
+:root[data-theme="3"] .svc{
+  background-image:linear-gradient(rgba(24,15,8,.72),rgba(24,15,8,.88)),var(--wood);
+  background-size:cover,auto;
+  background-blend-mode:normal;
+  border-color:rgba(255,190,120,.26);
+  color:var(--ink);
+}
+:root[data-theme="3"] .value p,
+:root[data-theme="3"] .dcard p,
+:root[data-theme="3"] .sk-feature p{color:rgba(255,239,220,.78)}
+:root[data-theme="3"] .drink-badge{border-color:rgba(255,190,120,.42)}
+:root[data-theme="2"] .eyebrow::after,:root[data-theme="3"] .eyebrow::after{background:var(--warm)}

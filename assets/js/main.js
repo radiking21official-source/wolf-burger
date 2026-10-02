@@ -9,7 +9,7 @@
   /* ---------- Helpers ---------- */
   function fmt(n) {
     if (n === null || n === undefined) return "—";
-    return n.toLocaleString("hu-HU") + " Ft";
+    return String(n).replace(/\B(?=(\d{3})+(?!\d))/g, " ") + " Ft";
   }
   function el(tag, cls, html) {
     var e = document.createElement(tag);
@@ -49,7 +49,7 @@
   }
   function setLang(l) {
     LANG = l; localStorage.setItem("wb_lang", l);
-    applyI18n(); renderMenu(); renderFeatured();
+    applyI18n(); window.dispatchEvent(new Event("wb:languagechange")); renderMenu(); renderFeatured();
   }
   $$(".lang button").forEach(function (b) {
     b.addEventListener("click", function () { setLang(b.getAttribute("data-lang")); });
@@ -269,6 +269,14 @@
 
   /* ---------- Back to top ---------- */
   $("#toTop").addEventListener("click", function () { window.scrollTo({ top: 0, behavior: "smooth" }); });
+
+  function initYoutubeCta() {
+    var section = $("#youtubeCta"); if (!section) return;
+    var url = section.getAttribute("data-youtube-url") || "";
+    if (!/^https:\/\/(www\.)?youtube\.com\//i.test(url) && !/^https:\/\/youtu\.be\//i.test(url)) return;
+    var link = $("[data-youtube-link]", section); if (link) link.href = url;
+    section.hidden = false;
+  }
 
   /* ---------- Init ---------- */
   $("#year").textContent = new Date().getFullYear();

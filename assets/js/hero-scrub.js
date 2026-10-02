@@ -34,17 +34,10 @@
     (mq && (mq('(max-width: 899px)').matches ||
             mq('(hover: none) and (pointer: coarse)').matches));
 
-  if (liteMode) {
-    track.classList.add('hero-track--static');
-    playLoop();
-    return;
-  }
-
   var reduce = window.matchMedia &&
     window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  // Reduced motion: nincs scrub, a pin-szakaszt kilapítjuk és a
-  // KÉSZ burgert mutatjuk (utolsó kocka) statikusan.
+  // Reduced motion always wins: freeze on the poster/final frame.
   if (reduce) {
     track.classList.add('hero-track--static');
     var showFinal = function () {
@@ -52,6 +45,12 @@
     };
     if (video.readyState >= 1) showFinal();
     else video.addEventListener('loadedmetadata', showFinal);
+    return;
+  }
+
+  if (liteMode) {
+    track.classList.add('hero-track--static');
+    playLoop();
     return;
   }
 

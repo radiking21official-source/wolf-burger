@@ -588,3 +588,33 @@ body.nav-open .nav__toggle span::after{transform:translate(-50%,0) rotate(-45deg
 .page-hero h1{font-size:clamp(2.4rem,7vw,4.4rem);line-height:1.02;margin:16px 0 0}
 .page-hero .lead{margin:18px auto 0}
 .subpage-first{padding-top:clamp(30px,5vw,56px)}
+
+/* Shared pricing notice and label treatment */
+.eyebrow::after{content:"";width:26px;height:2px;background:var(--cyan);display:inline-block}
+.price-note{max-width:72ch;margin:18px auto 0;color:var(--muted);font-size:.9rem;line-height:1.55;text-align:center}
+.price-notice[hidden]{display:none}
+.price-notice{position:fixed;inset:0;z-index:1000;display:grid;place-items:center;padding:20px}
+.price-notice__backdrop{position:absolute;inset:0;background:rgba(0,0,0,.78);backdrop-filter:blur(5px)}
+.price-notice__panel{position:relative;width:min(560px,100%);padding:clamp(28px,6vw,48px);background:var(--bg-elev);border:1px solid var(--line-2);border-radius:var(--radius-l);box-shadow:0 24px 80px rgba(0,0,0,.55);transform:translateY(10px);opacity:0;transition:opacity .22s ease,transform .22s ease}
+.price-notice.is-open .price-notice__panel{opacity:1;transform:none}
+.price-notice__panel h2{font-size:clamp(2rem,6vw,3.2rem);margin:14px 0}
+.price-notice__panel p{color:var(--ink-soft);font-size:1.05rem;line-height:1.55;margin:0 0 26px}
+.price-notice__close{position:absolute;right:14px;top:10px;width:38px;height:38px;border:0;background:transparent;color:var(--ink-soft);font-size:2rem;cursor:pointer}
+.price-notice__ok{min-width:110px}
+.drink-brand-logo{width:92px;height:32px;object-fit:contain;object-position:left center;vertical-align:middle}
+
+/* Mobile hero order: title, video, CTA. */
+@media (max-width:899px){
+  .hero-track .hero__inner--split{display:flex;flex-direction:column;justify-content:flex-start;gap:0}
+  .hero-track .hero__copy{display:contents}
+  .hero-track .hero__badge{order:0;margin-inline:var(--gutter)}
+  .hero-track .hero__inner--split h1{order:1;margin-inline:var(--gutter)}
+  .hero-track .hero__showcase{order:2;flex:0 0 auto;height:clamp(250px,43svh,430px);margin-top:12px}
+  .hero-track .hero__inner--split .hero__cta{order:3;margin:14px var(--gutter) 0}
+  .hero-track .hero__inner--split .hero__delivery{order:4}
+  .hero-track .hero__sub{display:none}
+  .hero-track .hero__card{min-height:0;height:100%}
+  .hero-track .hero__inner{padding-top:82px}
+}
+@media (prefers-reduced-motion:reduce){.price-notice__panel{transition:none}}
+.drink-name-label{font-family:var(--font-cond);font-weight:700}
