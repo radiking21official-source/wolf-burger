@@ -19,9 +19,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css?v=18">
-<link rel="stylesheet" href="assets/css/theme.css?v=18">
-<script src="assets/js/theme.js?v=18"></script>
+<link rel="stylesheet" href="assets/css/style.css?v=19">
+<link rel="stylesheet" href="assets/css/theme.css?v=19">
+<script src="assets/js/theme.js?v=19"></script>
 
 <script type="application/ld+json">
 {
@@ -91,8 +91,9 @@
       </div>
       <div class="hero__delivery reveal in d3">
         <span data-i18n="hero_delivery_label">Házhozszállítás:</span>
-        <a class="chip" href="https://wolt.com/hu/hun/szigetszentmiklos/restaurant/wolf-burger-szigetszentmiklos" target="_blank" rel="noopener"><b>Wolt</b></a>
-        <a class="chip" href="https://www.foodora.hu/restaurant/xna1/wolf-burger" target="_blank" rel="noopener"><b>foodora</b></a>
+        <a class="chip chip--wolt" href="https://wolt.com/hu/hun/szigetszentmiklos/restaurant/wolf-burger-szigetszentmiklos" target="_blank" rel="noopener"><b>Wolt</b></a>
+        <a class="chip chip--foodora" href="https://www.foodora.hu/restaurant/xna1/wolf-burger" target="_blank" rel="noopener"><b>foodora</b></a>
+        <a class="chip chip--falatozz" href="https://falatozz.hu/rendeles/szigethalom/Wolf-Burger/" target="_blank" rel="noopener"><b>Falatozz.hu</b></a>
       </div>
     </div>
     <div class="hero__showcase reveal in d1">
@@ -169,7 +170,7 @@
       <div class="exp-card reveal"><img src="assets/img/gallery/rendelo-kunyho.jpg" alt="A rusztikus rendelő kunyhó" loading="lazy"><div class="exp-card__body"><h3 data-i18n="exp_1_t">Rendelj a kunyhónál</h3><p data-i18n="exp_1_d"></p></div></div>
       <div class="exp-card reveal d1"><img src="assets/img/gallery/nagy-kivetito.jpg" alt="Óriás kivetítő a sörkertben" loading="lazy"><div class="exp-card__body"><h3 data-i18n="exp_2_t">Óriás kivetítő</h3><p data-i18n="exp_2_d"></p></div></div>
       <div class="exp-card reveal d2"><img src="assets/img/gallery/teke-jatek.jpg" alt="Kerti teke-játék" loading="lazy"><div class="exp-card__body"><h3 data-i18n="exp_3_t">Játék &amp; család</h3><p data-i18n="exp_3_d"></p></div></div>
-      <div class="exp-card reveal d3"><img src="assets/img/gallery/sorkert-este.jpg" alt="Duna-parti esti hangulat" loading="lazy"><div class="exp-card__body"><h3 data-i18n="exp_4_t">Duna-parti esték</h3><p data-i18n="exp_4_d"></p></div></div>
+      <div class="exp-card reveal d3"><img src="assets/img/menu/wolf-burger.jpg" alt="Frissen sütött Wolf burger" loading="lazy"><div class="exp-card__body"><h3 data-i18n="exp_4_t">Frissen sütve</h3><p data-i18n="exp_4_d"></p></div></div>
     </div>
   </div>
 </section>
@@ -190,7 +191,7 @@
         <div class="press-card__img"><img src="assets/img/menu/smash-burger.jpg" alt="Top 10 burger" loading="lazy"></div>
         <div class="press-card__body"><b>GastroGuide</b><span data-i18n="press_gg_top">Top 10 burger — listás említés</span><em data-i18n="press_visit">Cikk megnyitása →</em></div></a>
       <a class="press-card reveal d2" href="https://magyarnemzet.hu/repeta/2024/07/pazar-sorvalasztek-remek-burgerek-zold-kornyezet-folyopart-a-wolf-burgerezo-szigethalmon" target="_blank" rel="noopener">
-        <div class="press-card__img"><img src="assets/img/press/magyarnemzet.jpg" alt="Magyar Nemzet – Wolf Burger" loading="lazy"></div>
+        <div class="press-card__img"><img src="assets/img/gallery/wolf-burger-kez.jpg" alt="Magyar Nemzet – Wolf Burger" loading="lazy" style="object-position:center 78%"></div>
         <div class="press-card__body"><b>Magyar Nemzet</b><span data-i18n="press_mn">Pazar sörválaszték, remek burgerek, zöld környezet</span><em data-i18n="press_visit">Cikk megnyitása →</em></div></a>
       <a class="press-card reveal d3" href="https://www.atly.com/gluten-free/location/WolfBurger" target="_blank" rel="noopener">
         <div class="press-card__img"><img src="assets/img/press/atly.jpg" alt="atly.com – gluténmentes-barát" loading="lazy"></div>
@@ -221,14 +222,19 @@
       <p class="price-notice reveal d3" data-i18n="price_notice"></p>
     </div>
     <div class="delivery__grid">
-      <a class="dcard reveal" style="--brand-c:#00b7e6" href="https://wolt.com/hu/hun/szigetszentmiklos/restaurant/wolf-burger-szigetszentmiklos" target="_blank" rel="noopener">
+      <a class="dcard dcard--wolt reveal" style="--brand-c:#00b7e6" href="https://wolt.com/hu/hun/szigetszentmiklos/restaurant/wolf-burger-szigetszentmiklos" target="_blank" rel="noopener">
         <div class="dcard__logo wolt">Wolt</div>
         <div class="dcard__body"><h3>Wolt</h3><p data-i18n="wolt_desc"></p></div>
         <div class="dcard__arrow"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
       </a>
-      <a class="dcard reveal d1" style="--brand-c:#d70f64" href="https://www.foodora.hu/restaurant/xna1/wolf-burger" target="_blank" rel="noopener">
+      <a class="dcard dcard--foodora reveal d1" style="--brand-c:#d70f64" href="https://www.foodora.hu/restaurant/xna1/wolf-burger" target="_blank" rel="noopener">
         <div class="dcard__logo foodora">f</div>
         <div class="dcard__body"><h3>foodora</h3><p data-i18n="foodora_desc"></p></div>
+        <div class="dcard__arrow"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+      </a>
+      <a class="dcard dcard--falatozz reveal d2" style="--brand-c:#fd7e14" href="https://falatozz.hu/rendeles/szigethalom/Wolf-Burger/" target="_blank" rel="noopener">
+        <div class="dcard__logo falatozz"><img src="assets/img/falatozz-logo.svg" alt="Falatozz.hu" loading="lazy"></div>
+        <div class="dcard__body"><h3>Falatozz.hu</h3><p data-i18n="falatozz_desc"></p></div>
         <div class="dcard__arrow"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
       </a>
     </div>
@@ -500,11 +506,11 @@
   <button class="theme-opt" data-theme-set="3"><span class="theme-swatch sw3"></span><span data-i18n="theme_3">Tűz &amp; fa</span></button>
 </div>
 
-<script src="assets/js/menu-data.js?v=18"></script>
-<script src="assets/js/i18n.js?v=18"></script>
-<script src="assets/js/main.js?v=18"></script>
-<script src="assets/js/notice.js?v=18"></script>
-<script src="assets/js/youtube.js?v=18"></script>
-<script src="assets/js/hero-scrub.js?v=18"></script>
+<script src="assets/js/menu-data.js?v=19"></script>
+<script src="assets/js/i18n.js?v=19"></script>
+<script src="assets/js/main.js?v=19"></script>
+<script src="assets/js/notice.js?v=19"></script>
+<script src="assets/js/youtube.js?v=19"></script>
+<script src="assets/js/hero-scrub.js?v=19"></script>
 </body>
 </html>

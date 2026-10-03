@@ -130,8 +130,9 @@
     var ing = desc ? ('<h3>' + (d.prod_ingredients || "Összetevők") + '</h3><div class="ing-chips">' + ingChips(desc) + '</div>') : "";
     var order =
       '<div class="product__order">' +
-      '<a class="btn" href="https://wolt.com/hu/hun/szigetszentmiklos/restaurant/wolf-burger-szigetszentmiklos" target="_blank" rel="noopener">Wolt</a>' +
-      '<a class="btn btn--ghost" href="https://www.foodora.hu/restaurant/xna1/wolf-burger" target="_blank" rel="noopener">foodora</a>' +
+      '<a class="btn btn--wolt" href="https://wolt.com/hu/hun/szigetszentmiklos/restaurant/wolf-burger-szigetszentmiklos" target="_blank" rel="noopener">Wolt</a>' +
+      '<a class="btn btn--foodora" href="https://www.foodora.hu/restaurant/xna1/wolf-burger" target="_blank" rel="noopener">foodora</a>' +
+      '<a class="btn btn--falatozz" href="https://falatozz.hu/rendeles/szigethalom/Wolf-Burger/" target="_blank" rel="noopener">Falatozz.hu</a>' +
       '<a class="btn btn--ghost" href="etlap.html">' + (d.prod_details_cta || "Étlap") + '</a>' +
       '</div>';
     host.innerHTML =
