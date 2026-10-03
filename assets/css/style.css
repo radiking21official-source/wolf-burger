@@ -127,8 +127,8 @@ h1,h2,h3,h4{font-family:var(--font-display);font-weight:400;line-height:1.02;let
 .header.scrolled::after{opacity:0}
 .nav{display:flex;align-items:center;justify-content:space-between;gap:24px}
 .nav__logo{display:flex;align-items:center;flex:0 0 auto}
-.nav__logo img{height:52px;width:auto;max-width:none;flex-shrink:0;transition:height .35s var(--ease);filter:drop-shadow(0 4px 12px rgba(0,0,0,.4))}
-.header.scrolled .nav__logo img{height:42px}
+.nav__logo img{height:66px;width:auto;max-width:none;flex-shrink:0;transition:height .35s var(--ease);filter:drop-shadow(0 4px 12px rgba(0,0,0,.4))}
+.header.scrolled .nav__logo img{height:54px}
 .nav__menu{display:flex;align-items:center;gap:6px}
 .nav__link{
   font-family:var(--font-cond);text-transform:uppercase;letter-spacing:.08em;
@@ -393,7 +393,7 @@ body.nav-open .nav__toggle span::after{transform:translate(-50%,0) rotate(-45deg
 /* ---------- Footer ---------- */
 .footer{background:#0a0a0c;border-top:1px solid var(--line);padding-top:clamp(56px,8vw,84px)}
 .footer__grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:40px}
-.footer__brand img{height:64px;margin-bottom:18px}
+.footer__brand img{height:92px;margin-bottom:18px}
 .footer__brand p{color:var(--muted);font-size:.94rem;max-width:34ch}
 .footer h5{font-family:var(--font-cond);font-weight:700;text-transform:uppercase;letter-spacing:.1em;font-size:1rem;color:var(--ink);margin-bottom:18px}
 .footer ul li{margin-bottom:10px}
