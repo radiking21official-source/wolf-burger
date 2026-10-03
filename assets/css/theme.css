@@ -276,7 +276,7 @@
   --wood-size:auto,auto,auto,auto,100% 100%,100% 100%,360px 240px,100% 100%;
   --wood-ink:#fff3e0; --wood-ink-2:rgba(255,240,220,.86); --wood-accent:#ffbe6b;
 }
-.value,.stat,.svc,.sk-feature,.sorlap-info__item,.exp-card,.press-card,.pcard,.voucher-rules,.form{
+.value,.stat,.svc,.sk-feature,.sorlap-info__item,.exp-card,.press-card,.pcard,.voucher-rules,.form,.nutri-cell{
   position:relative;isolation:isolate;
   color:var(--wood-ink);
   border:1px solid #2a170a;
@@ -293,3 +293,7 @@
 .press-card em{color:#ffd9a0}
 .pcard__name{color:var(--wood-ink);text-shadow:0 1px 2px rgba(0,0,0,.6)}
 .pcard__media,.press-card__img{background:#2a170a}
+
+.nutri-cell b{color:var(--wood-ink);text-shadow:0 1px 2px rgba(0,0,0,.6)}
+.nutri-cell.kcal b{color:var(--wood-accent)}
+.nutri-cell span{color:var(--wood-ink-2)}
