@@ -43,3 +43,6 @@ Igazolás minden feladatra: statikus szerver + böngészős ellenőrzés (asztal
 - Horizont: a Drive-ban csak plakát-PDF van, a kép a Carlsberg Hungary oldaláról jött.
 - 8 done (mobil ellenőrizve), 11 done: ?v=17, hivatkozott fájlok mind léteznek, konzol tiszta.
 - Blokkolt: 9 (YouTube-link), Samuel Adams (ár).
+
+## ZÁRÓ
+A feladat-sor kiürült (minden done, blokkolt: YouTube-link, Samuel Adams ára). Loop leállítva. Utolsó commit: 272fe19, pusholva.
