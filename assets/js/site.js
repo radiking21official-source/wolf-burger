@@ -143,7 +143,7 @@
       '<h1>' + it.name + '</h1>' +
       (tags ? '<div class="product__tags">' + tags + '</div>' : '') +
       '<div class="product__price">' + price + '</div>' +
-      (desc ? '<p class="product__desc">' + desc + '</p>' : '') +
+      '<p class="price-notice product__price-notice">' + (d.price_notice || "") + '</p>' +
       ing +
       nutriGrid(it) +
       (it.kcal ? '<p class="product__note">' + (d.nutri_note || "") + '</p>' : '') +
@@ -181,9 +181,10 @@
                        : '<small>' + s[0] + ' · ' + fmt(s[1]) + '</small>';
       }).join("");
     }
+    var logo = it.logo ? '<img class="drink-logo" src="' + it.logo + '" alt="" loading="lazy">' : "";
     return el("div", "drink-row" + (thumb ? " drink-row--img" : ""),
       thumb +
-      '<div class="drink-row__main"><div class="drink-row__name">' + nameHtml +
+      '<div class="drink-row__main"><div class="drink-row__name">' + nameHtml + logo +
         (tags ? ' ' + tags : "") + '</div>' + desc + '</div>' +
       '<div class="drink-row__price">' + price + '</div>');
   }
