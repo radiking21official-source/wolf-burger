@@ -120,29 +120,29 @@ window.WB_MENU = {
         { name:"Budweiser", brand:"Budweiser", bc:"#b5121b", img:"assets/img/beer/budweiser.png", sizes:[["0,3 l",990],["0,5 l",1390]] },
         { name:"1664 Blanc", brand:"1664 Blanc", bc:"#2a6cc9", img:"assets/img/beer/1664.png", sizes:[["0,3 l",990],["0,5 l",1390]],
           hu:"Franciás, koriander-narancsos búzasör.", en:"French coriander-orange wheat beer." },
-        { name:"Horizont IPA", brand:"Horizont", bc:"#e0632b", sizes:[["0,3 l",1090],["0,5 l",1690]], tags:["new"],
+        { name:"Horizont IPA", brand:"Horizont", bc:"#e0632b", img:"assets/img/beer/horizont-ipa.png", sizes:[["0,3 l",1090],["0,5 l",1690]], tags:["new"],
           hu:"Kézműves, komlós IPA.", en:"Hoppy craft IPA." },
         { name:"Belle Vue Kriek", brand:"Belle Vue", bc:"#9c1f3a", img:"assets/img/beer/bellevue.png", sizes:[["0,3 l",1190],["0,5 l",1890]],
           hu:"Belga meggyes sör.", en:"Belgian cherry lambic." }
       ],
       uveges: [
-        { name:"Budweiser 0.0%", brand:"Budweiser", bc:"#b5121b", img:"assets/img/beer/budweiser.png", sizes:[["0,33 l",1090]],
+        { name:"Budweiser 0.0%", brand:"Budweiser", bc:"#b5121b", img:"assets/img/beer/budweiser-00-uveg.png", sizes:[["0,33 l",1090]],
           hu:"Alkoholmentes.", en:"Alcohol-free." },
         { name:"Somersby", brand:"Somersby", bc:"#1f8a3b", img:"assets/img/beer/somersby.png", sizes:[["0,33 l",1090]],
           hu:"Almás cider.", en:"Apple cider." }
       ],
       rovid: [
-        { name:"Jägermeister", sizes:[["2 cl",590],["4 cl",990]] },
-        { name:"Unicum", sizes:[["2 cl",690],["4 cl",1090]] },
-        { name:"Finlandia vodka", sizes:[["2 cl",590],["4 cl",990]] },
-        { name:"Beefeater gin", sizes:[["2 cl",690],["4 cl",1090]] },
-        { name:"Jameson whiskey", sizes:[["2 cl",790],["4 cl",1390]] },
-        { name:"Sierra tequila silver", sizes:[["2 cl",790],["4 cl",1390]] }
+        { name:"Jägermeister", logo:"assets/img/brands/jagermeister.png", sizes:[["2 cl",590],["4 cl",990]] },
+        { name:"Unicum", logo:"assets/img/brands/unicum.png", sizes:[["2 cl",690],["4 cl",1090]] },
+        { name:"Finlandia vodka", logo:"assets/img/brands/finlandia.png", sizes:[["2 cl",590],["4 cl",990]] },
+        { name:"Beefeater gin", logo:"assets/img/brands/beefeater.png", sizes:[["2 cl",690],["4 cl",1090]] },
+        { name:"Jameson whiskey", logo:"assets/img/brands/jameson.png", sizes:[["2 cl",790],["4 cl",1390]] },
+        { name:"Sierra tequila silver", logo:"assets/img/brands/sierra-tequila.png", sizes:[["2 cl",790],["4 cl",1390]] }
       ],
       palinka: [
-        { name:"Panyolai elixír – birsalma", sizes:[["2 cl",1490],["4 cl",2690]] },
-        { name:"Panyolai elixír – fürtös meggy", sizes:[["2 cl",1390],["4 cl",2490]] },
-        { name:"Panyolai elixír – kajszibarack", sizes:[["2 cl",1590],["4 cl",2990]] }
+        { name:"Panyolai elixír – birsalma", logo:"assets/img/brands/panyolai-elixir.png", sizes:[["2 cl",1490],["4 cl",2690]] },
+        { name:"Panyolai elixír – fürtös meggy", logo:"assets/img/brands/panyolai-elixir.png", sizes:[["2 cl",1390],["4 cl",2490]] },
+        { name:"Panyolai elixír – kajszibarack", logo:"assets/img/brands/panyolai-elixir.png", sizes:[["2 cl",1590],["4 cl",2990]] }
       ],
       froccs: [
         { name:"Kisfröccs", sizes:[["1 dl bor, 1 dl szóda",450]] },

@@ -90,3 +90,8 @@ A választott hangulat megjegyződik (localStorage), és **megosztható linkkel*
 - Cache-busting: az asset hivatkozások `?v=3` verzióval. Élesítéskor/új verziónál növeld a számot.
 
 > Tipp: a színkombinációk összehasonlításához küldd el ezeket a linkeket: `index.html?theme=1`, `index.html?theme=2`, `index.html?theme=3`.
+
+## Legutóbbi módosítások (hiánypótlás)
+- `assets/js/notice.js` — ár-tájékoztató pop-up (főoldal ↔ étlap váltáskor).
+- `assets/js/youtube.js` — YouTube-szekció; a `YT` objektumba kell a videó-azonosító / csatorna-URL, addig rejtett.
+- Itallap: `logo` mező a röviditalokon/pálinkákon (`assets/img/brands/`), üveges/korsós képek az `assets/img/beer/`-ben.

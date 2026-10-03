@@ -35,3 +35,11 @@ Igazolás minden feladatra: statikus szerver + böngészős ellenőrzés (asztal
 - 8 kód kész, mobil böngészős ellenőrzés még hátra.
 - 9: nincs YouTube-link a projektben/neten → assets/js/youtube.js-ben kitöltendő (szekció rejtve, amíg üres).
 - 10: háttér-ágens tölti a képeket; bekötés még hátra.
+
+## Napló (2. kör)
+- 10 done: Horizont-korsó, Budweiser 0.0 üveg, márkalogók (6 röviditál + Panyolai ×3) bekötve (`logo` mező + `.drink-logo`), böngészőben ellenőrizve.
+- Samuel Adams: blokkolva — nincs az itallapon, ár nélkül nem veszem fel (kép: assets/img/beer/samuel-adams-uveg.png, használaton kívül).
+- Budweiser 0.0: a képen „Budvar Nealko" címke van, nem „0.0%" — a tulajdonosnak ellenőrizni.
+- Horizont: a Drive-ban csak plakát-PDF van, a kép a Carlsberg Hungary oldaláról jött.
+- 8 done (mobil ellenőrizve), 11 done: ?v=17, hivatkozott fájlok mind léteznek, konzol tiszta.
+- Blokkolt: 9 (YouTube-link), Samuel Adams (ár).
