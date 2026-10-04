@@ -128,7 +128,7 @@ window.WB_MENU = {
       uveges: [
         { name:"Budweiser 0.0%", brand:"Budweiser", bc:"#b5121b", img:"assets/img/beer/budweiser-00-uveg.png", sizes:[["0,33 l",1090]],
           hu:"Alkoholmentes.", en:"Alcohol-free." },
-        { name:"Somersby", brand:"Somersby", bc:"#1f8a3b", img:"assets/img/beer/somersby.png", sizes:[["0,33 l",1090]],
+        { name:"Somersby", brand:"Somersby", bc:"#1f8a3b", img:"assets/img/beer/somersby-uveg.png", sizes:[["0,33 l",1090]],
           hu:"Almás cider.", en:"Apple cider." }
       ],
       rovid: [
