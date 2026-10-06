@@ -54,8 +54,7 @@ pages/
 - Betűk: Anton (display), Barlow Condensed (címkék), Barlow (szöveg) — Google Fonts
 
 ## Fontos, élesítés előtt ellenőrizendő
-1. **Nyitvatartás** — jelenleg becsült (H–Cs 11:30–21:00, P–Szo 11:30–22:00, V 11:30–21:00).
-   A források eltérnek (Foodora 11:30–19:30) — kérlek pontosítsd az `index.html` „Elérhetőség" szekciójában és az i18n-ben.
+1. **Nyitvatartás** — az étterem minden nap 11:30–20:00 között tart nyitva; a sörkert szezonális.
 2. **Impresszum** — a jelenlegi oldalról importált adatok (Farkas Balázs, 28808938 stb.); ellenőrizd és pótold a tárhelyszolgáltatót.
 3. **Adatvédelem / Cookie & ÁSZF** — minta szövegek, jogi átnézés ajánlott.
 4. **Kapcsolati űrlap** — jelenleg csak látványterv (nem küld e-mailt). Élesítéskor kösd be
